@@ -1,0 +1,46 @@
+/* Authentication Page */
+header{
+    background-color: #091F43;
+
+    div{
+        padding: 20px;
+
+        img{
+            width: 330px;
+        }
+    }
+}
+
+.authPage{
+
+    .auth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+
+    .section {
+        width: 200px;
+        margin: 20px;
+
+        .authInput{
+            padding: 7px;
+            margin: 5px;
+            border-radius: 12px;
+            border: 2px solid black;
+        }
+
+        a{
+            .authBtn{
+                padding: 7px;
+                margin: 5px;
+                border-radius: 12px;
+                width: 100px;
+                border: 2px solid black;
+                background-color: #091F43;
+                color: white;
+            }
+        }
+    }
+}
+}
