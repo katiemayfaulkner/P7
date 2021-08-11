@@ -4,26 +4,37 @@
 }
 .authHeader div {
   padding: 20px;
+  margin-top: 0;
 }
 .authHeader div img {
-  width: 330px;
+  width: 230px;
 }
 
+.authPage .container .hero {
+  text-align: center;
+}
+.authPage .container .hero h1 {
+  font-size: 35px;
+}
+.authPage .container .hero p {
+  font-size: 20px;
+}
 .authPage .auth {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 150px;
 }
 .authPage .auth .section {
-  width: 200px;
-  margin: 20px;
+  width: 220px;
+  margin: 25px;
 }
 .authPage .auth .section .authInput {
   padding: 7px;
   margin: 5px;
   border-radius: 12px;
   border: 2px solid black;
+  font-size: 17px;
 }
 .authPage .auth .section a .authBtn {
   padding: 7px;
@@ -33,18 +44,18 @@
   border: 2px solid black;
   background-color: #091F43;
   color: white;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 /* Main Page */
 .mainHeader {
   background-color: #091F43;
+  padding: 30px;
 }
 .mainHeader .box {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 30px;
 }
 .mainHeader .box .logo {
   width: 230px;
@@ -64,7 +75,7 @@
   cursor: pointer;
 }
 .mainHeader .post a button {
-  padding: 7px;
+  padding: 5px;
   margin: 0 5px;
   border-radius: 12px;
   width: 150px;
@@ -73,7 +84,10 @@
 }
 
 .container {
-  margin: 60px 0;
+  margin: 40px 0;
+}
+.container .responsiveItems {
+  display: none;
 }
 .container .trending {
   margin: 50px 0;
@@ -128,7 +142,7 @@
 }
 .container .box .col .stickyItems .row {
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
 }
 .container .box .col .stickyItems .row h2 {
   font-size: 23px;
@@ -169,4 +183,229 @@
   border: 2px solid black;
   background-color: #091F43;
   color: white;
+}
+.container .responsiveBtn {
+  display: none;
+}
+
+/* FOR TABLETS */
+@media only screen and (max-width: 768px) {
+  /* Main Page */
+  .mainHeader .box .logo {
+    width: 230px;
+    margin: 0;
+    padding: 0;
+  }
+  .mainHeader .search img {
+    width: 22px;
+    margin-right: 5px;
+  }
+  .mainHeader .search input {
+    width: 220px;
+  }
+  .mainHeader .post a img {
+    width: 20px;
+  }
+  .mainHeader .post a button {
+    width: 100px;
+  }
+
+  .container {
+    margin: 40px 0;
+  }
+  .container .box {
+    display: flex;
+    margin: 20px 0;
+  }
+  .container .box .col .filters h2 {
+    font-size: 25px;
+  }
+  .container .box .col .filters .buttons {
+    display: flex;
+  }
+  .container .box .col .filters .buttons button {
+    width: 120px;
+    padding: 7px;
+    margin: 0 5px;
+    border-radius: 12px;
+    border: 2px solid black;
+    background-color: #091F43;
+    color: white;
+    font-size: 20px;
+  }
+  .container .box .col .posts {
+    margin: 20px 0;
+  }
+  .container .box .col .posts h2 {
+    font-size: 25px;
+  }
+  .container .box .col .posts .post {
+    width: 100%;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  }
+  .container .box .col .stickyItems {
+    position: sticky;
+    top: 15px;
+  }
+  .container .box .col .stickyItems .row {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .container .box .col .stickyItems .row h2 {
+    font-size: 23px;
+  }
+  .container .box .col .stickyItems .row button {
+    width: 80%;
+    padding: 7px;
+    margin: 0 0 20px;
+    border-radius: 12px;
+    border: 2px solid black;
+    background-color: #091F43;
+    color: white;
+    font-size: 20px;
+  }
+  .container .box .col .stickyItems .row button img {
+    width: 18px;
+    margin: 0 5px;
+  }
+  .container .box .col .stickyItems .footer {
+    margin: 20px 0;
+    padding: 20px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  }
+  .container .box .col .stickyItems .footer p {
+    line-height: 5px;
+    font-size: 13px;
+  }
+  .container .box .col .stickyItems .footer span {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  .container .box .col .stickyItems button {
+    padding: 7px;
+    margin: 0 5px;
+    border-radius: 12px;
+    width: 150px;
+    border: 2px solid black;
+    background-color: #091F43;
+    color: white;
+  }
+}
+/* FOR PHONES */
+@media only screen and (max-width: 450px) {
+  /* Main Page */
+  .mainHeader .box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .mainHeader .box .logo {
+    margin-bottom: 25px;
+  }
+  .mainHeader .search {
+    display: flex;
+  }
+  .mainHeader .search img {
+    height: 30px;
+    margin-right: 5px;
+  }
+  .mainHeader .search input {
+    height: 30px;
+    width: 230px;
+  }
+  .mainHeader .post {
+    display: none;
+  }
+
+  .container .responsiveItems {
+    display: flex;
+  }
+  .container .responsiveItems .btn {
+    width: 100%;
+  }
+  .container .responsiveItems .btn h2 {
+    font-size: 15px;
+  }
+  .container .responsiveItems .btn button {
+    width: 100px;
+    padding: 7px;
+    margin: 0;
+    border-radius: 12px;
+    border: 2px solid black;
+    background-color: #091F43;
+    color: white;
+    font-size: 15;
+  }
+  .container .responsiveItems .btn button img {
+    width: 18px;
+    margin: 0 20px;
+  }
+  .container .trending .items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container .trending .items .item {
+    height: 250px;
+    width: 100%;
+    margin: 10px 15px;
+  }
+  .container .box {
+    display: block;
+    margin: 20px 0;
+  }
+  .container .box .col .filters {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .container .box .col .filters .buttons {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container .box .col .filters .buttons button {
+    width: 100px;
+    margin: 5px 5px;
+    font-size: 16px;
+  }
+  .container .box .col .posts {
+    margin: 20px 0;
+  }
+  .container .box .col .posts .post {
+    margin: 20px 0;
+    width: 100%;
+    height: 250px;
+  }
+  .container .box .col .stickyItems .row {
+    display: none;
+  }
+  .container .box .col .stickyItems .footer {
+    margin: 20px 0;
+    padding: 20px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  }
+  .container .box .col .stickyItems .footer p {
+    line-height: 5px;
+    font-size: 13px;
+  }
+  .container .box .col .stickyItems .footer span {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  .container .box .col .stickyItems button {
+    display: none;
+  }
+  .container .responsiveBtn {
+    display: block;
+    position: sticky;
+    bottom: 10px;
+    padding: 7px;
+    margin: 0 15px;
+    border-radius: 12px;
+    width: 150px;
+    border: 2px solid black;
+    background-color: #091F43;
+    color: white;
+  }
 }/*# sourceMappingURL=styles.css.map */
