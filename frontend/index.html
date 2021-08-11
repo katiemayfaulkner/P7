@@ -12,75 +12,115 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <img src="img/logo.png" alt="">
-            <input type="text" placeholder="Search.."> //TODO: design : search icon
-            <a href="">
-                <button id="login"> Log In </button>
-            </a>
-            <a href="">
-                <button id="signup"> Sign Up </button>
-            </a>
+    <header class="mainHeader">
+        <div class="box">
+            <img class="logo" src="Groupomania_Logos/icon-left-font-monochrome-white.svg" alt="">
+
+            <div class="search">
+                <img src="img/search-interface-symbol.svg" alt="">
+                <input type="text" placeholder="Search.."> </input>  
+            </div>
+
+            <div class="post">
+                <a href="">
+                    <img src="img/plus.svg" alt="">
+                    <button id="createPost"> Create new post </button>
+                </a>
+            </div>
         </div>
     </header>
 
     <section class="mainPage">
         <div class="container">
-            <div class="items">
-                <article class="trending">
-                    <h2> Top 3 trending today </h2>
-                    <div>
-                        <div>
-                            <img src="" alt="">
-                            <p> </p>
-                        </div>
-                        <div>
-                            <img src="" alt="">
-                            <p> </p>
-                        </div>
-                        <div>
-                            <img src="" alt="">
-                            <p> </p>
-                        </div>
-                        <div>
-                            <img src="" alt="">
-                            <p> </p>
-                        </div>
+            <article class="trending">
+                <h2> Top 3 posts today </h2>
+                <div class="items">
+                    <div class="item">
+                        <img src="" alt="">
+                        <p> </p>
                     </div>
-                </article>
+                    <div div class="item">
+                        <img src="" alt="">
+                        <p> </p>
+                    </div>
+                    <div div class="item">
+                        <img src="" alt="">
+                        <p> </p>
+                    </div>
+                </div>
+            </article>
 
-                <article class="filters ">
-                    <h2> Filters </h2>
-                    <div>
-                        <button> </button>
-                        <button> </button>
-                        <button> </button>
-                        <button> </button>
-                    </div>
-                </article>
-            </div>
+            <div class="box">
+                <div class="col col-8">
+                    <article class="filters">
+                        <h2> Filters </h2>
+                        <div class="buttons">
+                            <button> Trending </button>
+                            <button> New </button>
+                            <button> France </button>
+                            <button> Multimedia </button>
+                        </div>
+                    </article>
                 
-            <div class="items">
-                <div class="create item">
-                    <h2>Create new post</h2>
-                    <button> + </button>
+                    <article class="posts">
+                        <h2>Discover our posts</h2>
+                
+                        <div class="post">
+                            <img src="" alt="">
+                            <p> </p>
+                        </div>
+
+                        <div class="post">
+                            <img src="" alt="">
+                            <p> </p>
+                        </div>
+
+                        <div class="post">
+                            <img src="" alt="">
+                            <p> </p>
+                        </div>
+
+                        <div class="post">
+                            <img src="" alt="">
+                            <p> </p>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="col col-4">
+
+                    <div class="stickyItems">
+                        <div class=" row newPost">
+                            <h2> Create new post </h2>
+                            <button> 
+                                <img src="img/plus.svg" alt="">
+                                New post
+                            </button>
+                        </div>
+
+                        <div class="row profile">
+                            <h2> View my profile </h2>
+                            <button> 
+                                <img src="img/profile.svg" alt=""> 
+                                My profile 
+                            </button>
+                        </div>
+                
+                        <div class="footer">
+                            <p> About </p>
+                            <p> User Agreement </p>
+                            <p> Content Policy </p>
+                            <p> Privacy Policy </p>
+                            <p> Moderator Guidelines</p>
+                            <p> Help </p>
+                            <span> © 2021 Club Groupomania, Inc. All rights reserved.</span>
+                        </div>
+                        
+                        <button> Back to top </button>
+                    </div>
                 </div>
 
-                <div class="premium item">
-                    <h2> Make the most of your experience </h2>
-                    <button> Sign up for premium now </button>
-                </div>
-
-                <div class="footer item">
-                    <p> User Agreement </p>
-                    <p> Content Policy </p>
-                    <p> Privacy Policy </p>
-                    <p> Moderator Guidelines</p>
-                    <p> © 2021 Club Groupomania, Inc. All rights reserved.</p>
-                </div>
             </div>
-            <button> Back to top </button>
         </div>
     </section>
 
