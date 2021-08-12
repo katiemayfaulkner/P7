@@ -1,3 +1,7 @@
+* {
+  scroll-behavior: smooth;
+}
+
 /* Authentication Page */
 .authHeader {
   background-color: #091F43;

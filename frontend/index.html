@@ -1,228 +1,222 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="png" href="/frontend/Groupomania_Logos/icon-black.png">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title> Club Groupomania </title>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" type="png" href="/frontend/Groupomania_Logos/icon-black.png">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title> Club Groupomania </title>
+    </head>
 
-<body>
-    <header class="mainHeader">
-        <div class="box">
-            <img class="logo" src="Groupomania_Logos/icon-left-font-monochrome-white.svg" alt="">
+    <body>
+        <header class="mainHeader" id="scrollTop">
+            <div class="box">
+                <img class="logo" src="Groupomania_Logos/icon-left-font-monochrome-white.svg" alt="">
 
-            <div class="search">
-                <img src="img/search-interface-symbol.svg" alt="">
-                <input type="text" placeholder="Search.."> </input>  
-            </div>
+                <div class="search">
+                    <img src="img/search-interface-symbol.svg" alt="">
+                    <input type="text" placeholder="Search.."> </input>  
+                </div>
 
-            <div class="post">
-                <a href="">
-                    <img src="img/plus.svg" alt="">
-                    <button id="createPost"> New post </button>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <section class="mainPage">
-        <div class="container">
-
-            <div class="responsiveItems">
-                <div class="btn newPost">
-                    <button>
+                <div class="post">
+                    <a href="">
                         <img src="img/plus.svg" alt="">
-                        New post
-                    </button>
-                </div>
-                
-                <div class="btn profile">
-                    <button>
-                        <img src="img/profile.svg" alt="">
-                        My profile
-                    </button>
+                        <button id="createPost"> New post </button>
+                    </a>
                 </div>
             </div>
+        </header>
 
+        <section class="mainPage">
+            <div class="container">
 
+                <div class="responsiveItems">
+                    <div class="btn newPost">
+                        <button>
+                            <img src="img/plus.svg" alt="">
+                            New post
+                        </button>
+                    </div>
+                    
+                    <div class="btn profile">
+                        <button>
+                            <img src="img/profile.svg" alt="">
+                            My profile
+                        </button>
+                    </div>
+                </div>
 
-
-
-            <article class="trending">
-                <h2> Top 3 posts today </h2>
-                <div class="items">
-                    <div class="item">
-                        <img src="img/sport.jpeg" alt="">
-                        <div class="contents">
-                            <div class="content">
-                                <div class="user">
-                                    <img src="img/post.svg" alt="">
-                                    <h2> Dave John </h2>
+                <article class="trending">
+                    <h2> Top 3 posts today </h2>
+                    <div class="items">
+                        <div class="item">
+                            <img src="img/sport.jpeg" alt="">
+                            <div class="contents">
+                                <div class="content">
+                                    <div class="user">
+                                        <img src="img/post.svg" alt="">
+                                        <h2> Dave John </h2>
+                                    </div>
+                                    
+                                    <div class="stats">
+                                        <span class="like">
+                                            <img src="img/like.svg" alt="">
+                                            <p>550</p>
+                                        </span>
+                                        <span class="dislike">
+                                            <img src="img/dislike.svg" alt="">
+                                            <p>50</p>
+                                        </span>
+                                    </div>
                                 </div>
-                                
-                                <div class="stats">
-                                    <span class="like">
-                                        <img src="img/like.svg" alt="">
-                                        <p>550</p>
-                                    </span>
-                                    <span class="dislike">
-                                        <img src="img/dislike.svg" alt="">
-                                        <p>50</p>
-                                    </span>
+                        
+                                <p> Wish we hadn't had that meeting.. missed my girl's first match :(</p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="img/bob.jpg" alt="">
+                            <div class="contents">
+                                <div class="content">
+                                    <div class="user">
+                                        <img src="img/post.svg" alt="">
+                                        <h2> Fred Jr </h2>
+                                    </div>
+                                    
+                                    <div class="stats">
+                                        <span class="like">
+                                            <img src="img/like.svg" alt="">
+                                            <p>500</p>
+                                        </span>
+                                        <span class="dislike">
+                                            <img src="img/dislike.svg" alt="">
+                                            <p>100</p>
+                                        </span>
+                                    </div>
                                 </div>
+
+                                <p> What a legend..</p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="img/nature.jpeg" alt="">
+                            <div class="contents">
+                                <div class="content">
+                                    <div class="user">
+                                        <img src="img/post.svg" alt="">
+                                        <h2> Sally Blue </h2>
+                                    </div>
+                                    
+                                    <div class="stats">
+                                        <span class="like">
+                                            <img src="img/like.svg" alt="">
+                                            <p>300</p>
+                                        </span>
+                                        <span class="dislike">
+                                            <img src="img/dislike.svg" alt="">
+                                            <p>30</p>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <p> Took a lovely hike on my day off! Always helps me feel grounded <3</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+               
+                <div class="box">
+                    <div class="col col-lg-8 col-md-8">
+                        <article class="filters">
+                            <h2> Filters </h2>
+                            <div class="buttons">
+                                <button> Trending </button>
+                                <button> New </button>
+                                <button> France </button>
+                                <button> Multimedia </button>
+                            </div>
+                        </article>
+                    
+                        <article class="posts">
+                            <h2>Discover our posts</h2>
+                    
+                            <div class="post">
+                                <img src="" alt="">
+                                <p> </p>
+                            </div>
+
+                            <div class="post">
+                                <img src="" alt="">
+                                <p> </p>
+                            </div>
+
+                            <div class="post">
+                                <img src="" alt="">
+                                <p> </p>
+                            </div>
+
+                            <div class="post">
+                                <img src="" alt="">
+                                <p> </p>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <div class="col col-lg-4 col-md-4">
+
+                        <div class="stickyItems">
+                            <div class=" row newPost">
+                                <h2> Create new post </h2>
+                                <button> 
+                                    <img src="img/plus.svg" alt="">
+                                    New post
+                                </button>
+                            </div>
+
+                            <div class="row profile">
+                                <h2> View my profile </h2>
+                                <button> 
+                                    <img src="img/profile.svg" alt=""> 
+                                    My profile 
+                                </button>
                             </div>
                     
-                            <p> Wish we hadn't had that meeting.. missed my girl's first match :(</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <img src="img/bob.jpg" alt="">
-                        <div class="contents">
-                            <div class="content">
-                                <div class="user">
-                                    <img src="img/post.svg" alt="">
-                                    <h2> Fred Jr </h2>
-                                </div>
-                                
-                                <div class="stats">
-                                    <span class="like">
-                                        <img src="img/like.svg" alt="">
-                                        <p>500</p>
-                                    </span>
-                                    <span class="dislike">
-                                        <img src="img/dislike.svg" alt="">
-                                        <p>100</p>
-                                    </span>
-                                </div>
+                            <div class="footer">
+                                <p> About </p>
+                                <p> User Agreement </p>
+                                <p> Content Policy </p>
+                                <p> Privacy Policy </p>
+                                <p> Moderator Guidelines</p>
+                                <p> Help </p>
+                                <span> © 2021 Club Groupomania, Inc. All rights reserved.</span>
                             </div>
-
-                            <p> What a legend..</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <img src="img/nature.jpeg" alt="">
-                        <div class="contents">
-                            <div class="content">
-                                <div class="user">
-                                    <img src="img/post.svg" alt="">
-                                    <h2> Sally Blue </h2>
-                                </div>
-                                
-                                <div class="stats">
-                                    <span class="like">
-                                        <img src="img/like.svg" alt="">
-                                        <p>300</p>
-                                    </span>
-                                    <span class="dislike">
-                                        <img src="img/dislike.svg" alt="">
-                                        <p>30</p>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <p> Took a lovely hike on my day off! Always helps me feel grounded <3</p>
+                            
+                            <a href="#scrollTop">
+                                <button class="scrollBtn"> Back to top </button>
+                            </a>
                         </div>
                     </div>
                 </div>
-            </article>
-
-
-
-
-
-
-
-            
-            <div class="box">
-                <div class="col col-lg-8 col-md-8">
-                    <article class="filters">
-                        <h2> Filters </h2>
-                        <div class="buttons">
-                            <button> Trending </button>
-                            <button> New </button>
-                            <button> France </button>
-                            <button> Multimedia </button>
-                        </div>
-                    </article>
-                
-                    <article class="posts">
-                        <h2>Discover our posts</h2>
-                
-                        <div class="post">
-                            <img src="" alt="">
-                            <p> </p>
-                        </div>
-
-                        <div class="post">
-                            <img src="" alt="">
-                            <p> </p>
-                        </div>
-
-                        <div class="post">
-                            <img src="" alt="">
-                            <p> </p>
-                        </div>
-
-                        <div class="post">
-                            <img src="" alt="">
-                            <p> </p>
-                        </div>
-                    </article>
-                </div>
-                
-                <div class="col col-lg-4 col-md-4">
-
-                    <div class="stickyItems">
-                        <div class=" row newPost">
-                            <h2> Create new post </h2>
-                            <button> 
-                                <img src="img/plus.svg" alt="">
-                                New post
-                            </button>
-                        </div>
-
-                        <div class="row profile">
-                            <h2> View my profile </h2>
-                            <button> 
-                                <img src="img/profile.svg" alt=""> 
-                                My profile 
-                            </button>
-                        </div>
-                
-                        <div class="footer">
-                            <p> About </p>
-                            <p> User Agreement </p>
-                            <p> Content Policy </p>
-                            <p> Privacy Policy </p>
-                            <p> Moderator Guidelines</p>
-                            <p> Help </p>
-                            <span> © 2021 Club Groupomania, Inc. All rights reserved.</span>
-                        </div>
-                        
-                        <button> Back to top </button>
-                    </div>
-                </div>
+                <a href="#scrollTop">
+                    <button class="responsiveBtn"> Back to top </button>
+                </a>
             </div>
-            <button class="responsiveBtn"> Back to top </button>
-        </div>
-    </section>
+        </section>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-</body>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+    </body>
 
 </html>
