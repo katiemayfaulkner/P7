@@ -10,7 +10,7 @@
   padding: 20px;
   margin-top: 0;
 }
-.authHeader div img {
+.authHeader div a img {
   width: 230px;
 }
 
@@ -234,7 +234,11 @@
   font-size: 14px;
   margin: 5px 0;
 }
-.container .box .col .stickyItems button {
+.container .box .col .stickyItems a {
+  width: 100%;
+  text-decoration: none;
+}
+.container .box .col .stickyItems a button {
   padding: 7px;
   margin: 0 5px;
   border-radius: 12px;
