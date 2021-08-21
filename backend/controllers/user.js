@@ -2,7 +2,7 @@ const { Op } = require("sequelize");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken'); //jwt = json web token
 
-const db = require('../config/db');
+const db = require('../config/database');
 const User = require('../models/user');
 const config = require('../config/authConfig');
 
