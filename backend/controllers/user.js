@@ -34,7 +34,12 @@ exports.signup = (req, res, next) => {
         username: req.body.username,
         password: hash
       });
-      user.save().then( //Create new user and save to database
+      user.save({   //Create new user and save to database
+        username,
+        email,
+        password,
+        
+      }).then( 
         () => {
           res.status(201).json({
             message: 'User added successfully!'
@@ -50,6 +55,13 @@ exports.signup = (req, res, next) => {
     }
   );
 };
+
+// Insert into table
+//       User.create({
+//         username,
+//         email,
+//         password,
+//       })
 
 exports.login = (req, res, next) => {
   User.findOne({ username: req.body.username }).then( //check if entered username corresponds to an existing user in database
@@ -135,115 +147,116 @@ exports.deleteUser = (req, res) => {
 
 
 //user = {};
-exports.signup = (req, res, next) => {
 
-    // Save User to Database
-    let { username, email, password } = req.body;
-    password = bcrypt.hashSync(req.body.password, 10);
+// exports.signup = (req, res, next) => {
 
-    let errors = [];
+//     // Save User to Database
+//     let { username, email, password } = req.body;
+//     password = bcrypt.hashSync(req.body.password, 10);
 
-    // Validate Fields
-    if(!username) {
-      errors.push({ text: 'Please add a username' });
-    }
-    if(!email) {
-      errors.push({ text: 'Please add email' });
-    }
-    if(!password) {
-      errors.push({ text: 'Please add a password' });
-    }
+//     let errors = [];
 
-    // Check for errors
-    if(errors.length > 0) {
-      res.render('add', {
-        errors,
-      });
-    } else {
+//     // Validate Fields
+//     if(!username) {
+//       errors.push({ text: 'Please add a username' });
+//     }
+//     if(!email) {
+//       errors.push({ text: 'Please add email' });
+//     }
+//     if(!password) {
+//       errors.push({ text: 'Please add a password' });
+//     }
 
-      // Insert into table
-      User.create({
-        username,
-        email,
-        password,
-      })
-        .then(gig => res.sendStatus(200))
-        .catch(err => res.render('error', {error:err.message}))
-    }
-};
+//     // Check for errors
+//     if(errors.length > 0) {
+//       res.render('add', {
+//         errors,
+//       });
+//     } else {
 
-exports.signin = (req, res) => {
-    User.findOne({ where: { username: req.body.username } }).then(
-        (user) => {
-            if (!user) {
-                return res.status(401).json({
-                    error: new Error('User not found!')
-                });
-            }
+//       // Insert into table
+//       User.create({
+//         username,
+//         email,
+//         password,
+//       })
+//         .then(gig => res.sendStatus(200))
+//         .catch(err => res.render('error', {error:err.message}))
+//     }
+// };
 
-            bcrypt.compare(req.body.password, user.password).then(
-                (valid) => {
-                    if (!valid) {
-                        return res.status(401).json({
-                            error: new Error('Incorrect password!')
-                        });
-                    }
-                    const token = jwt.sign(
-                        { id: user._id },
-                        config.secret,
-                        { expiresIn: 86400 },
-                    );
+// exports.signin = (req, res) => {
+//     User.findOne({ where: { username: req.body.username } }).then(
+//         (user) => {
+//             if (!user) {
+//                 return res.status(401).json({
+//                     error: new Error('User not found!')
+//                 });
+//             }
 
-                    res.status(200).json(
-                        {
-                            user: user,
-                            token: token
-                        }
-                    );
-                }
-            ).catch(
-                (error) => {
-                    res.status(500).json({
-                        error: error
-                    });
-                }
-            );
-        }
-    ).catch(
-        (error) => {
-            res.status(500).json({
-                error: error
-            });
-        }
-    );
-}
+//             bcrypt.compare(req.body.password, user.password).then(
+//                 (valid) => {
+//                     if (!valid) {
+//                         return res.status(401).json({
+//                             error: new Error('Incorrect password!')
+//                         });
+//                     }
+//                     const token = jwt.sign(
+//                         { id: user._id },
+//                         config.secret,
+//                         { expiresIn: 86400 },
+//                     );
 
-exports.getUser = (req, res) => {
-    console.log(req.params.id);
-    User.findOne({where: {username: req.params.id}}).then(
-        (user) => {
-            res.status(200).json(user)
-        }
-    ).catch(
-        (error) => {
-            res.status(400).json({
-                error: error
-            });
-        }
-    );
-}
+//                     res.status(200).json(
+//                         {
+//                             user: user,
+//                             token: token
+//                         }
+//                     );
+//                 }
+//             ).catch(
+//                 (error) => {
+//                     res.status(500).json({
+//                         error: error
+//                     });
+//                 }
+//             );
+//         }
+//     ).catch(
+//         (error) => {
+//             res.status(500).json({
+//                 error: error
+//             });
+//         }
+//     );
+// }
 
-exports.deleteUser = (req, res) => {
-    User.findOne({where: {username: req.params.id}}).then(
-        (user) => {
-            user.destroy();
-            res.sendStatus(200);
-        }
-    ).catch(
-        (error) => {
-            res.status(400).json({
-                error: error
-            });
-        }
-    );
-}
+// exports.getUser = (req, res) => {
+//     console.log(req.params.id);
+//     User.findOne({where: {username: req.params.id}}).then(
+//         (user) => {
+//             res.status(200).json(user)
+//         }
+//     ).catch(
+//         (error) => {
+//             res.status(400).json({
+//                 error: error
+//             });
+//         }
+//     );
+// }
+
+// exports.deleteUser = (req, res) => {
+//     User.findOne({where: {username: req.params.id}}).then(
+//         (user) => {
+//             user.destroy();
+//             res.sendStatus(200);
+//         }
+//     ).catch(
+//         (error) => {
+//             res.status(400).json({
+//                 error: error
+//             });
+//         }
+//     );
+// }

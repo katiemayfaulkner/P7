@@ -3,13 +3,16 @@ const bodyParser = require("body-parser");  // Node. js body parsing middleware
 const cors = require("cors");               // allows restricted resources to be requested from diff domain from which the first resource was served
 const path = require('path');               // provides utilities for working with file and directory paths
 
-// // Defining Routes
-// const userRoutes = require("./routes/user")
+const app = express();
+
+
+// Defining Routes
+const userRoutes = require("./routes/user")
 // const postRoutes = require("./routes/post")
+
 
 //NODE SERVER
 const http = require('http');
-const app = express();
 
 const normalizePort = val => {              //return a valid port, whether it is provided as a number or a string
   const port = parseInt(val, 10);
@@ -57,8 +60,10 @@ server.on('listening', () => {
 
 server.listen(port);
 
+
 //Import DATABASE config for connection, which takes place in db file
 const db = require('./config/database')
+
 
 app.use(cors());
 
@@ -68,6 +73,8 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 
-// //Using Routes
-// app.use('/user', userRoutes);
+//Using Routes
+app.use('/user', userRoutes);
 // app.use('/post', postRoutes);
+
+module.exports = app;
