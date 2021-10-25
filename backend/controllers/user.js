@@ -1,11 +1,11 @@
 const { Op } = require("sequelize");
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken'); //jwt = json web token
+const jwt = require('jsonwebtoken');
 
 const db = require('../config/database');
 const User = require('../models/user');
-const config = require('../config/authConfig');
 
+// SIGNUP
 exports.signup = (req, res, next) => {
   User.findOne({ email: req.body.email }).then( //check if entered email corresponds to an existing user in database
   (user) => {
@@ -63,6 +63,7 @@ exports.signup = (req, res, next) => {
 //         password,
 //       })
 
+// LOGIN
 exports.login = (req, res, next) => {
   User.findOne({ username: req.body.username }).then( //check if entered username corresponds to an existing user in database
     (user) => {
@@ -104,6 +105,7 @@ exports.login = (req, res, next) => {
   );
 }
 
+// GET USER INFO
 exports.getUser = (req, res) => {
     console.log(req.params.id);
     User.findOne({where: {username: req.params.id}}).then(
@@ -119,6 +121,7 @@ exports.getUser = (req, res) => {
     );
 }
 
+// DELETE USER
 exports.deleteUser = (req, res) => {
     User.findOne({where: {username: req.params.id}}).then(
         (user) => {
@@ -139,8 +142,6 @@ exports.deleteUser = (req, res) => {
         }
     );
 }
-
-
 
 //OR USE THIS
 

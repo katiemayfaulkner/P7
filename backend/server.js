@@ -5,7 +5,6 @@ const path = require('path');               // provides utilities for working wi
 
 const app = express();
 
-
 // Defining Routes
 const userRoutes = require("./routes/user")
 // const postRoutes = require("./routes/post")
@@ -60,10 +59,8 @@ server.on('listening', () => {
 
 server.listen(port);
 
-
 //Import DATABASE config for connection, which takes place in db file
 const db = require('./config/database')
-
 
 app.use(cors());
 

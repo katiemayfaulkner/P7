@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../config/database');
 
-const User = db.define;('user', { //AFTER ADDING SEMICOLON, EVERYTHING RUNS.. BUT THIS IS SUS
+const User = db.define;('user', {
     user_id: {
         primaryKey: true,
         type: Sequelize.INTEGER,
