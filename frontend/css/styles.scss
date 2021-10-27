@@ -5,25 +5,21 @@
 /* Authentication Page */
 .header{
     background-color: #091F43;
-
-    div{
-        padding: 20px;
-        margin-top: 0;
-
-        a{
-
-            img{
-                width: 230px;
-            }
-        }
-        
-    }
-}
-
-.authPage{
+    padding: 30px 0;
 
     .container{
 
+        a{
+            img{
+                width: 230px;
+            }
+        }  
+    }
+}
+
+.auth-page{
+
+    .container{
         .hero{
             text-align: center;
 
@@ -72,243 +68,382 @@
 }
 
 /* Main Page */
-.mainHeader{
+.main-header{
    background-color: #091F43; 
-   padding: 30px;
+   padding: 30px 0;
 
-   .box{
+   .container{
        display: flex;
        justify-content: space-between;
        width: 100%;
 
         .logo{
-            width: 230px;
-        }
-    }
-
-    .search{
-        
-        img{
-            width: 22px;
-            margin-right: 5px;
+            height: 36px;
+            width: auto;
         }
 
-        input{
-            width: 330px;
-            border-radius: 12px;
-            border: none;
-            padding: 5px;
+        h1{
+            font-size: 22px;
+            color: rgb(255, 255, 255);
+            line-height: 36px;
         }
-    }
 
-    .post{
+        .header-btns{
+            display: flex;
+            flex-wrap: nowrap;
 
-        a{
             img{
-                width: 20px;
-                cursor: pointer;
-            }
+                height: 36px;
+                width: auto;
+                margin: 0 10px;
+                cursor: pointer;  
+            }   
 
-            button{
-               padding: 5px;
-                margin: 0 5px;
-                border-radius: 12px;
-                width: 150px;
-                border: 2px solid black;
-                background-color: white;
+            .window{
+                visibility: hidden;
+                position: fixed;
+                z-index: 1;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                left: 0;
+                background-color: rgba(117, 114, 114, 0.5);
+
+                .box{
+                    position: absolute;
+                    top: 50%; 
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    width: 70%;
+                    height: 500px;
+                    margin: O auto;
+                    padding: 30px;
+                    border-radius: 12px;
+                    background-color: #091F43;
+                    color: white;
+
+                    .title{
+                        display: flex;
+                        justify-content: space-between;
+
+                        h3{
+                            font-size: 25px;
+                            font-weight: 300px;
+                        }
+                    }
+
+                    .create-post{
+                        padding: 30px;
+
+                        .img-input {
+                            margin-bottom: 25px;
+                        }
+                            
+                        .text-input{
+                            margin: 25px 0;
+
+                            label{
+                                width: 100%;
+                                font-size: 21px;
+                            }
+
+                            input{
+                                width: 100%;
+                                height: 200px;
+                                border: 2px solid black;
+                            }
+                        }
+
+                        .submit-btn{
+                            padding: 7px;
+                            border-radius: 12px;
+                            width: 100px;
+                            border: 2px solid black;
+                            background-color: white;
+                            color: #091F43;
+                            font-size: 17px;
+                        }
+                    }
+
+                    .profile{
+                        padding-top: 30px;
+
+                        img {
+                            width: 50px;
+                            height: auto;
+                            margin-bottom: 20px;
+                        }
+
+                        div{
+                            display: flex;
+                            flex-wrap: wrap;
+                            color: white;
+
+                            .title{
+                                font-weight: 500;
+                            }
+
+                            p{
+                                padding: 10px 5px;
+                                font-size: 1.2rem;
+                                font-weight: 300;
+                            }
+                        }
+
+                        input{
+                            padding: 7px;
+                            border-radius: 12px;
+                            border: none;
+                            background-color: white;
+                            color: #091F43;
+                            font-size: 17px;
+                        }
+                    }
+                }
             }
         }
     }
 }
 
-.container{
-    margin: 40px 0;
+.main-page{
 
-    .responsiveItems{
-        display: none;
-    }
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 30px;
 
-    .trending{
-        margin: 50px 0;
-
-        h2{
-            font-size: 25px;
-        }
-
-        .items{
-            display: flex;
+        .posts {
             margin: 20px 0;
 
-            .item{
-                height: 300px;
-                width: calc(100%/3);
-                margin: 0 15px;
-                padding: 5px;
-                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-                position: relative;
-                cursor: pointer;
+            h2{
+                font-size: 25px;
+                padding-left: 15px;
+            }
 
-                img{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
+            .box{
+                display: flex;
+                flex-wrap: wrap;
 
-                .contents{
-                    background-color: rgba(29, 28, 28, 0.562);
-                    position: absolute;
-                    bottom: 5px;
-                    left: 5px;
-                    right: 5px;
+                .post{
+                    padding: 15px;
 
-                    .user{
-                        display: inline-flex;
-
-                        h2{
-                            font-size: 17px;
-                            color: white;
-                            margin-left: 5px;
-                            line-height: 30px;
-                        }
-
-                        img{
-                            height: 30px;
-                            width: 30px;
-                        }
-                    }
-
-                    .stats{
-                        display: inline-flex;
-
-                        span{
-                            display: inline-flex;
-                            margin: 0 10px;
-
-
+                    .content{
+                        position: relative;
+                        padding: 15px;
+                        width: 100%;
+                        height: 460px;
+                        background-color: #f2f2f2;
+                        border-radius: 12px;
+                        box-shadow: rgba(35, 35, 65, 0.25) 0px 6px 12px -2px, rgba(3, 3, 3, 0.418) 0px 3px 7px -3px;                    
+                    
+                        .top-bar{
+                            display: flex;
+                            flex-wrap: nowrap;
+                            justify-content: space-between;
+                            
                             img{
-                                height: 20px;
-                                width: 20px;
+                                height: 30px;
+                                cursor: pointer; 
                             }
 
-                            p{
-                                margin: 2px;
-                                line-height: 20px; 
+                            .user-info{
+                                display: flex;
+    
+                                p{
+                                    margin-left: 10px;
+                                    line-height: 30px;
+                                }
+                            }
+
+                            .view-comments{
+                                visibility: hidden;
+                                position: fixed;
+                                z-index: 1;
+                                right: 0;
+                                bottom: 0;
+                                top: 0;
+                                left: 0;
+                                background-color: rgba(117, 114, 114, 0.5);
+    
+                                .box{
+                                    position: absolute;
+                                    top: 50%; 
+                                    left: 50%;
+                                    transform: translate(-50%,-50%);
+                                    width: 70%;
+                                    height: 500px;
+                                    margin: O auto;
+                                    border-radius: 12px;
+                                    background-color: #091F43;
+                                    color: white;
+                                    overflow: scroll;
+                                    display: block;
+
+                                    .title{
+                                        position: sticky;
+                                        top: 0;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        padding: 15px;
+                                        
+                                        background-color: #091F43;
+
+                                        h3{
+                                            font-size: 22px;
+                                            font-weight: 300px;
+                                        }
+                                    }
+
+                                    .items{
+                                        overflow: scroll;
+                                        padding: 0 15px 15px 15px;
+
+                                        .item{
+                                            display: flex;
+                                            flex-wrap: wrap;
+                                            height: auto;
+                                            padding: 7px;
+                                            margin: 15px;
+                                            border-radius: 12px;
+                                            background-color: #204175;
+        
+                                            .user{
+                                                display: flex;
+                                                flex-wrap: nowrap;
+                                                margin-right: 10px;
+        
+                                                img{
+                                                    height: 25px;
+                                                    margin-right: 7px;
+                                                }
+        
+                                                p{
+                                                    line-height: 25px;
+                                                    font-weight: 600;
+                                                }
+                                            }
+        
+                                            p{
+                                               font-weight: 200; 
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
 
                         
-                    }
+                        .img-container{
+                            position: relative;
+                            text-align: center;
+                            overflow: hidden;
+                            
+                            img{
+                                height: 220px;
+                                width: auto;
+                                border: 1px solid rgba(167, 164, 164, 0.459);
+                                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                            }
+                        }
 
-                    .content{
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: space-between;
-                        margin: 10px 10px 10px;
+                        .caption-container{
+                            margin: 15px 0;
+                            height: auto;
+                            max-height: 100px;
+                            overflow-y: scroll;
+                            border-radius: 12px;
+                            // border: 1px solid rgba(167, 164, 164, 0.459);
+                            // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
-                    }
+                        }
 
-                    p{
-                        font-size: 16px;
-                        margin: 2px 10px 10px;
-                        color: white;  
-                    }
-                }
-            }
-        }
-    }
+                        .post-actions{
+                            position: absolute;
+                            bottom: 15px;
+                            display: flex;
 
-    .box{
-        display: flex;
-        margin: 20px 0;
+                            img{
+                                margin-right: 15px;
+                                height: 25px;
+                                cursor: pointer; 
+                            }
 
-        .col{
+                            .likes{
+                                position: relative;
 
-            .filters{
-                
-                h2{
-                    font-size: 25px;
-                }
+                                .like{
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                }
+    
+                                .like-active{
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                    transform: scale(0.2);
+                                    transition: transform 400ms;
 
-                .buttons{
-                    display: flex;
+                                    &:hover{
+                                        transform: scale(0.99);
+                                        
+                                    }
+                                }
+                            }
 
-                    button{
-                        width: 120px;
-                        padding: 7px;
-                        margin: 0 5px;
-                        border-radius: 12px;
-                        border: 2px solid black;
-                        background-color: #091F43;
-                        color: white;
-                        font-size: 20px;
-                    }
-                }
-            }
+                            .comments{
+                                display: flex;
+                                flex-wrap: nowrap;
 
-            .posts {
-                margin: 20px 0;
+                                .input{
+                                    border-radius: 12px;
+                                    border: 1px solid #091F43;
+                                }
 
-                h2{
-                    font-size: 25px;
-                }
-
-                .post{
-                    width: 100%;
-                    height: 300px;
-                    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-                }
-            }
-
-            .stickyItems{
-                position: sticky;
-                top: 15px;
-
-                .row{
-                    width: 100%;
-                    margin: 0 auto;
-
-                    h2{
-                        font-size: 23px;
-                    }
-
-                    button{
-                        width: 80%;
-                        padding: 7px;
-                        margin: 0 0 20px;
-                        border-radius: 12px;
-                        border: 2px solid black;
-                        background-color: #091F43;
-                        color: white;
-                        font-size: 20px;
-
-                        img{
-                            width: 18px;
-                            margin: 0 5px;
+                                .btn{
+                                    margin-left: 5px;
+                                    padding: 5px;
+                                    border-radius: 12px;
+                                    width: 70px;
+                                    border: 2px solid black;
+                                    background-color: #091F43;
+                                    color: white;
+                                    font-size: 15px; 
+                                }
+                            }
                         }
                     }
                 }
+            }
 
+        } 
+
+        div{
+
+            .sticky-items{
+                position: sticky;
+                top: 30px;
+    
                 .footer{
                     margin: 20px 0;
                     padding: 20px;
-                    width: 100%;
                     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;   
                 
                     p{
                         line-height: 5px;
                         font-size: 13px;
                     }
-
+    
                     span{
                         font-size: 14px;
                         margin: 5px 0;
                     }
                 }
-
+    
                 a{
                     width: 100%;
                     text-decoration: none;
-
+    
                     button{
                         padding: 7px;
                         margin: 0 5px;
@@ -319,406 +454,14 @@
                         color: white;
                     }
                 }
-
-            }
-        }
-    }
     
-    .responsiveBtn{
-        display: none;
-    }
-}
-
-/* Post Page */
-.container{
-
-    a{
-        display: flex;
-        align-items: baseline;
-
-            img{
-                width: 17px;
-                margin-right: 5px;
-            }
-
-            h1{
-                font-size: 22px;
-                color: black;
-            }
-    }
-
-    .inputs{
-        padding: 30px;
-
-        .imgInput {
-            margin-bottom: 25px;
-        }
-            
-        .textInput{
-            margin: 25px 0;
-
-            label{
-                width: 100%;
-                font-size: 21px;
-            }
-
-            input{
-                width: 100%;
-                height: 200px;
-                border: 2px solid black;
-            }
-        }
-
-        .submitBtn{
-            padding: 7px;
-            border-radius: 12px;
-            width: 100px;
-            border: 2px solid black;
-            background-color: #091F43;
-            color: white;
-            font-size: 17px;
-        }
-    }
-}
-
-/* Profile Page */
-.profilePage{
-
-    .container{
-
-        .profile{
-            width: 70%;
-            margin: 20px auto;
-            padding: 1.5rem 1.2rem;
-            border-radius: 20px;
-            background-color: rgba(231, 231, 231, 0.692);
-
-            img{
-                width: 70px;
-                margin-bottom: 20px;
-            }
-
-            div{
-                display: flex;
-                flex-wrap: wrap;
-                color: black;
-
-                .title{
-                    font-weight: 500;
-                }
-
-                p{
-                    padding: 10px 5px;
-                    font-size: 1.2rem;
-                    font-weight: 300;
-                }
-            }
-
-            input{
-                padding: 7px;
-                border-radius: 12px;
-                border: 2px solid black;
-                background-color: #091F43;
-                color: white;
-                font-size: 17px;
             }
         }
     }
 }
 
 /* FOR TABLETS */
-@media only screen and (max-width: 768px){
-  
-    /* Main Page */
-    .mainHeader{
-        .box{
-            .logo{
-                width: 230px;
-                margin: 0;
-                padding: 0;
-            }
-        }
-
-        .search{  
-            img{
-                width: 22px;
-                margin-right: 5px;
-            }
-            input{
-                width: 220px;
-            }
-        }
-
-        .post{
-            a{
-                img{
-                    width: 20px;
-                }
-
-                button{
-                    width: 100px;
-                }
-            }
-        }
-    }
-
-    .container{
-        margin: 40px 0;
-
-        .box{
-            display: flex;
-            margin: 20px 0;
-
-            .col{
-
-                .filters{
-                    
-                    h2{
-                        font-size: 25px;
-                    }
-
-                    .buttons{
-                        display: flex;
-
-                        button{
-                            width: 120px;
-                            padding: 7px;
-                            margin: 0 5px;
-                            border-radius: 12px;
-                            border: 2px solid black;
-                            background-color: #091F43;
-                            color: white;
-                            font-size: 20px;
-                        }
-                    }
-                }
-
-                .posts {
-                    margin: 20px 0;
-
-                    h2{
-                        font-size: 25px;
-                    }
-
-                    .post{
-                        width: 100%;
-                        height: 300px;
-                        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-                    }
-                }
-
-                .stickyItems{
-                    position: sticky;
-                    top: 15px;
-
-                    .row{
-                        width: 100%;
-                        margin: 0 auto;
-
-                        h2{
-                            font-size: 23px;
-                        }
-
-                        button{
-                            width: 80%;
-                            padding: 7px;
-                            margin: 0 0 20px;
-                            border-radius: 12px;
-                            border: 2px solid black;
-                            background-color: #091F43;
-                            color: white;
-                            font-size: 20px;
-
-                            img{
-                                width: 18px;
-                                margin: 0 5px;
-                            }
-                        }
-                    }
-
-                    .footer{
-                        margin: 20px 0;
-                        padding: 20px;
-                        width: 100%;
-                        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;   
-                    
-                        p{
-                            line-height: 5px;
-                            font-size: 13px;
-                        }
-
-                        span{
-                            font-size: 14px;
-                            margin: 5px 0;
-                        }
-                    }
-
-                    button{
-                        padding: 7px;
-                        margin: 0 5px;
-                        border-radius: 12px;
-                        width: 150px;
-                        border: 2px solid black;
-                        background-color: #091F43;
-                        color: white;
-                    }
-                }
-            }
-        }
-    }
-}
+@media only screen and (max-width: 768px){}
 
 /* FOR PHONES */
-@media only screen and (max-width: 450px) {
-    
-    /* Main Page */
-    .mainHeader{ 
-        .box{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-
-            .logo{
-                margin-bottom: 25px;
-            }
-        }
-
-        .search{
-            display: flex;
-
-            img{
-                height: 30px;
-                margin-right: 5px;
-            }
-
-            input{
-                height: 30px;
-                width: 230px;
-            }
-        }
-
-        .post{
-            display: none;
-        }
-    }
-
-    .container{
-
-        .responsiveItems{
-            display: flex;
-
-            .btn{
-                width: 100%;
-
-                h2{
-                    font-size: 15px;
-                }
-
-                button{
-                    width: 100px;
-                    padding: 7px;
-                    margin: 0;
-                    border-radius: 12px;
-                    border: 2px solid black;
-                    background-color: #091F43;
-                    color: white;
-                    font-size: 15;
-
-                    img{
-                        width: 18px;
-                        margin: 0 20px;
-                    }
-                }
-            }
-        }
-
-        .trending{
-
-            .items{
-                display: flex;
-                flex-wrap: wrap;
-
-                .item{
-                    height: 250px;
-                    width: 100%;
-                    margin: 10px 15px;
-                }
-            }
-        }
-
-        .box{
-            display: block;
-            margin: 20px 0;
-
-            .col{
-
-                .filters{
-                     width: 100%;
-                     margin-bottom: 30px;
-
-                    .buttons{
-                        display: flex;
-                        flex-wrap: wrap;
-
-                        button{
-                            width: 100px;
-                            margin: 5px 5px;
-                            font-size: 16px;
-                        }
-                    }
-                }
-
-                .posts {
-                    margin: 20px 0;
-
-                    .post{
-                        margin: 20px 0;
-                        width: 100%;
-                        height: 250px;
-                    }
-                }
-
-                .stickyItems{
-
-                    .row{
-                        display: none;
-                    }
-
-                    .footer{
-                        margin: 20px 0;
-                        padding: 20px;
-                        width: 100%;
-                        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;   
-                    
-                        p{
-                            line-height: 5px;
-                            font-size: 13px;
-                        }
-
-                        span{
-                            font-size: 14px;
-                            margin: 5px 0;
-                        }
-                    }
-
-                    button{
-                        display: none;
-                    }
-                }
-            }
-        }
-
-        .responsiveBtn{
-            display:block;
-            position: sticky;
-            bottom: 10px;
-            padding: 7px;
-            margin: 0 15px;
-            border-radius: 12px;
-            width: 150px;
-            border: 2px solid black;
-            background-color: #091F43;
-            color: white;
-        }
-    }
-}
+@media only screen and (max-width: 450px) {}

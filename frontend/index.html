@@ -12,209 +12,223 @@
     </head>
 
     <body>
-
-        <header class="mainHeader" id="scrollTop">
-            <div class="box">
+        <header class="main-header" id="scroll-top">
+            <div class="container">
                 <a href="index.html">
                     <img class="logo" src="Groupomania_Logos/icon-left-font-monochrome-white.svg" alt="">
                 </a>
 
-                <div class="search">
-                    <img src="img/search-interface-symbol.svg" alt="">
-                    <input type="text" placeholder="Search.."> </input>  
-                </div>
+                <h1> Welcome, Katie!</h1>
 
-                <div class="post">
-                    <a href="post.html">
-                        <img src="img/plus.svg" alt="">
-                        <button id="createPost"> New post </button>
-                    </a>
+                <div class="header-btns">  
+                    <img src="img/post.png" alt="" id="showPost">
+
+                    <div class="window" id="postModal">
+                        <div class="box">
+                            <div class="title">
+                                <h3> Create New Post: </h3>
+                                <img src="img/close-white.png" alt="" id="closePost">
+                            </div>
+                    
+                            <div class="create-post">
+                                <div class="img-input">
+                                    <input type="file">
+                                </div>
+                                <div class="text-input">
+                                    <label for="text"> Insert your caption here: </label>
+                                    <input type="text" maxlength="150">
+                                </div>
+                                <input type="submit" value="Submit" class="submit-btn">
+                            </div>
+                        </div>
+                    </div>
+    
+                    <img src="img/user.png" alt="" id="showUser"> 
+                    
+                    <div class="window" id="userModal">
+                        <div class="box">
+                            <div class="title">
+                                <h3> My account: </h3>
+                                <img src="img/close-white.png" alt="" id="closeUser">
+                            </div>    
+                            
+                            <div class="profile">
+                                <img src="img/user.png" alt="">
+                                <div>
+                                    <p class="title">Username:</p>
+                                    <p id="userName"> blablabla</p>
+                                </div>
+                                <div>
+                                    <p class="title">Email:</p>
+                                    <p id="userEmail"> blablabla</p>
+                                </div>
+                                <div>
+                                    <p class="title">Password:</p>
+                                    <p> ******** </p>
+                                </div>
+                                <input type="button" value="Delete account" id="deleteBtn">
+                            </div>
+                    </div>
                 </div>
+  
             </div>
         </header>
 
-        <section class="mainPage">
-            <div class="container">
+        <section class="main-page">
+            <div class="container">             
+                <article class="posts col-lg-9 col-md-8">
+                    <h2>Discover our posts</h2>
 
-                <div class="responsiveItems">
-                    <div class="btn newPost">
-                        <a href="post.html">
-                            <button>
-                                <img src="img/plus.svg" alt="">
-                                New post
-                            </button>
-                        </a>
-                    </div>
-                    
-                    <div class="btn profile">
-                        <a href="profile.html">
-                            <button >
-                                <img src="img/profile.svg" alt="">
-                                My profile
-                            </button>
-                        </a>
-                    </div>
-                </div>
-
-                <article class="trending">
-                    <h2> Top 3 posts today </h2>
-                    <div class="items">
-                        <div class="item">
-                            <img src="img/sport.jpeg" alt="">
-                            <div class="contents">
-                                <div class="content">
-                                    <div class="user">
-                                        <img src="img/post.svg" alt="">
-                                        <h2> Dave John </h2>
+                    <div class="box">
+                        <div class="post col-lg-6">
+                            <div class="content">
+                                <div class="top-bar">
+                                    <div class="user-info">
+                                        <img src="img/user-black.png" alt="">
+                                        <p class="name-container"> Katie May </p>
                                     </div>
-                                    
-                                    <div class="stats">
-                                        <span class="like">
-                                            <img src="img/like.svg" alt="">
-                                            <p>550</p>
-                                        </span>
-                                        <span class="dislike">
-                                            <img src="img/dislike.svg" alt="">
-                                            <p>50</p>
-                                        </span>
+
+                                    <div>
+                                        <img src="img/comments.png" alt="" id="commentsBtn">
+                                        <img src="img/bin-black.png" alt="">
+                                    </div>
+
+                                    <div class="view-comments" id="commentsModal">
+                                        <div class="box">
+                                            <div class="title">
+                                                <h3> Comments: </h3>
+                                                <img src="img/close-white.png" alt="" id="closeComments">
+                                            </div>
+
+                                            <div class="items">
+                                                <div class="item">
+                                                    <div class="user">
+                                                        <img src="img/user.png" alt="">
+                                                        <p class="user-name"> Katie May : </p>
+                                                    </div>
+                                                    <p class="comment"> woww </p>
+                                                </div>
+                                        
+                                                <div class="item">
+                                                    <div class="user">
+                                                        <img src="img/user.png" alt="">
+                                                        <p class="user-name"> Jason John : </p>
+                                                    </div>
+                                                    <p class="comment"> bob ross is so awesome! </p>
+                                                </div>
+                                        
+                                                <div class="item">
+                                                    <div class="user">
+                                                        <img src="img/user.png" alt="">
+                                                        <p class="user-name"> Amy Pond : </p>
+                                                    </div>
+                                                    <p class="comment"> cool fact!! </p>
+                                        
+                                                </div>
+                                        
+                                                <div class="item">
+                                                    <div class="user">
+                                                        <img src="img/user.png" alt="">
+                                                        <p class="user-name"> Jill Hall : </p>
+                                                    </div>
+                                                    <p class="comment"> my fav painter! </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
-                        
-                                <p> Wish we hadn't had that meeting.. missed my girl's first match :( </p>
+
+                                <div class="img-container">
+                                    <img src="img/bob.jpg" alt="">
+                                </div>
+
+                                <div class="caption-container">
+                                    <p> However iconic and well-known his image, Ross is still a man of surprises. One glaring fact, that even the most faithful
+                                    television watchers do not often notice, is that Ross was missing a finger. It was cut off on a saw while woodworking
+                                    with his father in his youth. If you look carefully, you will see that Ross hid his missing digit by holding his palette
+                                    with the hand missing the finger.</p>
+                                </div>
+
+                                <div class="post-actions">
+                                    <div class="likes">
+                                        <img class="like" src="img/like.png" alt="">
+                                        <img class="like-active" src="img/like-active.png" alt="">
+                                    </div>
+                                    <div class="dislikes">
+                                        <img class="dislike" src="img/dislike.png" alt="">
+                                        <img class="dislike-active" src="img/dislike-active.png" alt="">
+                                    </div>
+
+                                    <form class="comments">
+                                        <input class="input" type="text" name="comments" placeholder="Write a comment..."> </input>
+                                        <input class="btn" type="submit" value="Submit">
+                                    </form>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="item">
-                            <img src="img/bob.jpg" alt="">
-                            <div class="contents">
-                                <div class="content">
-                                    <div class="user">
-                                        <img src="img/post.svg" alt="">
-                                        <h2> Fred Jr </h2>
+                        <div class="post col-lg-6">
+                            <div class="content">
+                                <div class="top-bar">
+                                    <div class="user-info">
+                                        <img src="img/user-black.png" alt="">
+                                        <p class="name-container"> Janice John </p>
                                     </div>
-                                    
-                                    <div class="stats">
-                                        <span class="like">
-                                            <img src="img/like.svg" alt="">
-                                            <p>500</p>
-                                        </span>
-                                        <span class="dislike">
-                                            <img src="img/dislike.svg" alt="">
-                                            <p>100</p>
-                                        </span>
+                                    <div>
+                                        <img src="img/comments.png" alt="">
+                                        <img src="img/bin-black.png" alt="">
                                     </div>
                                 </div>
 
-                                <p> What a legend..</p>
+                                <div class="img-container">
+                                    <img src="img/anotherTest.jpeg" alt="">
+                                </div>
+
+                                <div class="caption-container">
+                                    <p> The sky was so pretty last night.</p>
+                                </div>
+
+                                <div class="post-actions">
+                                    <img src="img/like.png" alt="">
+                                    <img src="img/dislike.png" alt="">  
+                                </div>
                             </div>
                         </div>
 
-                        <div class="item">
-                            <img src="img/nature.jpeg" alt="">
-                            <div class="contents">
-                                <div class="content">
-                                    <div class="user">
-                                        <img src="img/post.svg" alt="">
-                                        <h2> Sally Blue </h2>
-                                    </div>
-                                    
-                                    <div class="stats">
-                                        <span class="like">
-                                            <img src="img/like.svg" alt="">
-                                            <p>300</p>
-                                        </span>
-                                        <span class="dislike">
-                                            <img src="img/dislike.svg" alt="">
-                                            <p>30</p>
-                                        </span>
-                                    </div>
-                                </div>
+                        <div class="post col-lg-6">
+                            <div class="content">
+                                <img src="" alt="">
+                                <p> </p>
+                            </div>
+                        </div>
 
-                                <p> Took a lovely hike on my day off! Always helps me feel grounded <3</p>
+                        <div class="post col-lg-6">
+                            <div class="content">
+                                <img src="" alt="">
+                                <p> </p>
                             </div>
                         </div>
                     </div>
                 </article>
-               
-                <div class="box">
-                    <div class="col col-lg-8 col-md-8">
-                        <article class="filters">
-                            <h2> Filters </h2>
-                            <div class="buttons">
-                                <button> Trending </button>
-                                <button> New </button>
-                                <button> France </button>
-                                <button> Multimedia </button>
-                            </div>
-                        </article>
-                    
-                        <article class="posts">
-                            <h2>Discover our posts</h2>
-                    
-                            <div class="post">
-                                <img src="" alt="">
-                                <p> </p>
-                            </div>
-
-                            <div class="post">
-                                <img src="" alt="">
-                                <p> </p>
-                            </div>
-
-                            <div class="post">
-                                <img src="" alt="">
-                                <p> </p>
-                            </div>
-
-                            <div class="post">
-                                <img src="" alt="">
-                                <p> </p>
-                            </div>
-                        </article>
-                    </div>
-                    
-                    <div class="col col-lg-4 col-md-4">
-
-                        <div class="stickyItems">
-                            <div class=" row newPost">
-                                <h2> Create new post </h2>
-                                <a href="post.html">
-                                    <button>
-                                        <img src="img/plus.svg" alt="">
-                                        New post
-                                    </button>
-                                </a>
-                            </div>
-
-                            <div class="row profile">
-                                <h2> View my profile </h2>
-                                <a href="profile.html">
-                                    <button>
-                                        <img src="img/profile.svg" alt="">
-                                        My profile
-                                    </button>
-                                </a>
-                            </div>
-                    
-                            <div class="footer">
-                                <p> About </p>
-                                <p> User Agreement </p>
-                                <p> Content Policy </p>
-                                <p> Privacy Policy </p>
-                                <p> Moderator Guidelines</p>
-                                <p> Help </p>
-                                <span> © 2021 Club Groupomania, Inc. All rights reserved.</span>
-                            </div>
-                            
-                            <a href="#scrollTop">
-                                <button class="scrollBtn"> Back to top </button>
-                            </a>
+                 
+                <div class="col-lg-3 col-md-4">
+                    <div class="sticky-items">
+                        <div class="footer">
+                            <p> About </p>
+                            <p> User Agreement </p>
+                            <p> Content Policy </p>
+                            <p> Privacy Policy </p>
+                            <p> Moderator Guidelines</p>
+                            <p> Help </p>
+                            <span> © 2021 Club Groupomania, Inc. All rights reserved.</span>
                         </div>
-                    </div>
+    
+                        <a href="#scroll-top">
+                            <button class="scroll-btn"> Back to top </button>
+                        </a>    
+                    </div>  
                 </div>
-                <a href="#scrollTop">
-                    <button class="responsiveBtn"> Back to top </button>
-                </a>
             </div>
         </section>
 
