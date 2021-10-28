@@ -70,32 +70,37 @@
 /* Main Page */
 .main-header{
    background-color: #091F43; 
-   padding: 30px 0;
+   padding: 20px 0;
 
    .container{
        display: flex;
        justify-content: space-between;
        width: 100%;
 
-        .logo{
-            height: 36px;
-            width: auto;
-        }
-
-        h1{
-            font-size: 22px;
-            color: rgb(255, 255, 255);
-            line-height: 36px;
-        }
+       div{
+           display: block;
+           
+           .logo{
+               height: 36px;
+               width: auto;
+            }
+            
+            h1{
+               margin-left: 50px;
+               font-size: 22px;
+               color: rgb(255, 255, 255);
+               line-height: 36px;
+           }
+       }
 
         .header-btns{
             display: flex;
             flex-wrap: nowrap;
-
+            
             img{
                 height: 36px;
                 width: auto;
-                margin: 0 10px;
+                margin: 18px 10px 0;
                 cursor: pointer;  
             }   
 
@@ -115,7 +120,7 @@
                     left: 50%;
                     transform: translate(-50%,-50%);
                     width: 70%;
-                    height: 500px;
+                    height: 450px;
                     margin: O auto;
                     padding: 30px;
                     border-radius: 12px;
@@ -127,20 +132,20 @@
                         justify-content: space-between;
 
                         h3{
-                            font-size: 25px;
+                            font-size: 23px;
                             font-weight: 300px;
                         }
                     }
 
                     .create-post{
-                        padding: 30px;
+                       margin-top: 30px;
 
                         .img-input {
                             margin-bottom: 25px;
                         }
                             
                         .text-input{
-                            margin: 25px 0;
+                            margin: 5px 0;
 
                             label{
                                 width: 100%;
@@ -149,7 +154,8 @@
 
                             input{
                                 width: 100%;
-                                height: 200px;
+                                height: 100px;
+                                overflow: scroll;
                                 border: 2px solid black;
                             }
                         }
@@ -166,7 +172,7 @@
                     }
 
                     .profile{
-                        padding-top: 30px;
+                        margin-top: 30px;
 
                         img {
                             width: 50px;
@@ -331,8 +337,7 @@
                                 }
                             }
                         }
-
-                        
+                       
                         .img-container{
                             position: relative;
                             text-align: center;
@@ -460,8 +465,76 @@
     }
 }
 
-/* FOR TABLETS */
-@media only screen and (max-width: 768px){}
+// Small devices (phones, 700px and down)
+@media only screen and (max-width: 700px) {
 
-/* FOR PHONES */
-@media only screen and (max-width: 450px) {}
+    .main-header{
+        .container{
+
+            div{
+                .logo{
+                    height: 32px;
+                    width: auto;
+                }
+
+                h1{
+                    margin-left: 50px;
+                    font-size: 20px;
+                }
+            }
+
+            .header-btns{
+
+                img{
+                   height: 30px;
+                   margin-left: 7px; 
+                }
+
+                .window{
+                   .box{
+                        width: 90%;
+                    } 
+                }
+            }
+        }
+    }
+
+    .main-page{
+        .container{
+            .posts{
+                .box{
+                    .post{
+                        .content{
+
+                            .top-bar{             
+                                .view-comments{
+    
+                                    .box{
+                                        width: 90%;
+                                    }
+                                }
+                            }
+
+                            .post-actions{
+
+                                div{
+                                    img{
+                                        margin-right: 10px;
+                                        height: 20px;
+                                    }
+                                }
+
+                                .comments{
+                                    .input{
+                                        width: 115px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
