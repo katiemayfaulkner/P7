@@ -7,13 +7,13 @@ const app = express();
 
 // Defining Routes
 const userRoutes = require("./routes/user")
-// const postRoutes = require("./routes/post")
+const postRoutes = require("./routes/post")
 
 
 //NODE SERVER
 const http = require('http');
 
-const normalizePort = val => {              //return a valid port, whether it is provided as a number or a string
+const normalizePort = val => {    //return a valid port, whether it is provided as a number or a string
   const port = parseInt(val, 10);
 
   if (isNaN(port)) {
@@ -28,7 +28,7 @@ const normalizePort = val => {              //return a valid port, whether it is
 const port = normalizePort(process.env.PORT || 3000 );
 app.set('port', port);
 
-const errorHandler = error => {             //check for various errors and handle them appropriately — it is then registered to the server
+const errorHandler = error => {   //check for various errors and handle them appropriately — it is then registered to the server
   if (error.syscall !== 'listen') {
     throw error;
   }
@@ -50,7 +50,7 @@ const errorHandler = error => {             //check for various errors and handl
 
 const server = http.createServer(app);
 
-server.on('error', errorHandler);           //logs the port or named pipe on which the server is running to the console
+server.on('error', errorHandler);   //logs the port or named pipe on which the server is running to the console
 server.on('listening', () => {
   const address = server.address();
   const bind = typeof address === 'string' ? 'pipe ' + address : 'port ' + port;
@@ -65,10 +65,8 @@ const db = require('./config/database')
 app.use(cors());
 
 app.use(bodyParser.json()); // for parsing application/json
-// app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
-
 
 //Using Routes
 app.use('/user', userRoutes);

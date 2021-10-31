@@ -1,40 +1,30 @@
-// const Sequelize = require('sequelize');
+const Sequelize = require('sequelize');
 
-// const sequelize = new Sequelize('localhost', 'root', 'My1$ecure2P@$$sw0rd3', {
-//   host: 'localhost',
-//   dialect: 'mysql',
+//Establishing MySQL database connection using Sequelize
+const sequelize = new Sequelize('DB-P7', 'root', 'My1$ecure2P@$$sw0rd3', {
+  host: 'localhost',
+  dialect: 'mysql',
+  pool: {
+    max: 10,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  },
 
-//   pool: {
-//       max: 5, //Never have more than five open connections
-//       min: 0, //At a minimum, have zero open connections
-//       acquire: 30000,
-//       idle: 10000 //Remove a connection from the pool after the connection has not been used for 10 seconds
-//   }
-// });
+//   // disable logging; default: console.log
+//   logging: false
+});
 
+//Importing the models
+const userModel = require('../models/user');
+const postModel = require('../models/post');
 
-// var mysql = require('mysql');
-  
-// var con = mysql.createConnection({
-//     host: "localhost",
-//     user: "root",
-//     password: "My1$ecure2P@$$sw0rd3"
-// });
-  
-// // Create the Database named "gfg"
-// con.connect(function (err) {
-//     if (err) throw err;
-//     console.log("Connected!");
-  
-//     con.query("CREATE DATABASE gfg",
-//         function (err, result) {
-//             if (err) throw err;
-//             console.log("Database created");
-//         });
-// });
+const User = userModel(sequelize, Sequelize);
+// const Post = postModel(sequelize, Sequelize)
 
-// // Create the Connection
-// con.connect(function(err) {
-//   if (err) throw err;
-//   console.log("Database connected!");
-// });
+// Generating the database tables
+sequelize.sync({ force: true })     // force:true = when we start our app all tables will be drop from db and regenerate new
+
+  .then(() => {
+    console.log('Database table is created!')
+});

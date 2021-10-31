@@ -17,66 +17,65 @@ exports.signup = (req, res, next) => {
     }
   )
 
-  User.findOne({ username: req.body.username }).then( //check if entered username corresponds to an existing user in database
-  (user) => {
-      if (user) { //if not, return error, if corresponds, continue
-        return res.status(401).json({
-          error: new Error('Username already in use!')
+  const strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})');
+
+  // If password is strong (meets regex requirements and is >= 8 characters), continue
+  if(strongPassword.test(req.body.password) && req.body.password.length >= 8) {
+    
+    // If no existing user is found and psw is strong, call bycrypt function and ask it to salt password x10 (higher value = more security)
+    bcrypt.hash(req.body.password, 10).then(
+      (hash) => {
+        const user = new User({
+          email: req.body.email,
+          password: hash
         });
+        // Create new user and save to database
+        User.create({
+          firstName,
+          lastName,
+          email,
+          password
+        })
+        .then(
+          () => {
+            res.status(201).json({
+              message: 'User added successfully!'
+            });
+          }
+        ).catch(
+          (error) => {
+            res.status(500).json({
+              error: error
+            });
+          }
+        );
       }
-    }
-  )
+    );
 
-  bcrypt.hash(req.body.password, 10).then( //call bycrypt function and ask it to salt password x10 (higher value = more security)
-    (hash) => {
-      const user = new User({
-        email: req.body.email,
-        username: req.body.username,
-        password: hash
-      });
-      user.save({   //Create new user and save to database
-        username,
-        email,
-        password,
-        
-      }).then( 
-        () => {
-          res.status(201).json({
-            message: 'User added successfully!'
-          });
-        }
-      ).catch(
-        (error) => {
-          res.status(500).json({
-            error: error
-          });
-        }
-      );
-    }
-  );
+  } else {
+    // Pass error if it's a weak password
+    res.status(400).json({
+        message: "Weak password. Password must be at least 8 characters, and contain at least one uppercase, one lowercase, one number and a special character!"
+    });
+  };
 };
-
-// Insert into table
-//       User.create({
-//         username,
-//         email,
-//         password,
-//       })
 
 // LOGIN
 exports.login = (req, res, next) => {
-  User.findOne({ username: req.body.username }).then( //check if entered username corresponds to an existing user in database
+  User.findOne({ username: req.body.email }).then( //check if entered username corresponds to an existing user in database
     (user) => {
         if (!user) { //if not, return error, if corresponds, continue
         return res.status(401).json({
-          error: new Error('User not found!')
+          error: error,
+          message: 'User not found!'
         });
       }
       bcrypt.compare(req.body.password, user.password).then( //compare entered password with saved hash in database
         (valid) => {
           if (!valid) { //if invalid, return error, if valid, users credentials = valid
             return res.status(401).json({
-              error: new Error('Incorrect password!')
+              error: error, 
+              message: 'Incorrect password!'
             });
           }
           const token = jwt.sign( //encode new token
@@ -105,134 +104,11 @@ exports.login = (req, res, next) => {
   );
 }
 
-// GET USER INFO
-exports.getUser = (req, res) => {
-    console.log(req.params.id);
-    User.findOne({where: {username: req.params.id}}).then(
-        (user) => {
-            res.status(200).json(user)
-        }
-    ).catch(
-        (error) => {
-            res.status(400).json({
-                error: error
-            });
-        }
-    );
-}
 
-// DELETE USER
-exports.deleteUser = (req, res) => {
-    User.findOne({where: {username: req.params.id}}).then(
-        (user) => {
-            user.destroy().then(
-                () => {
-                res.status(201).json({
-                    message: 'User added successfully!'
-                });
-            }
-            );
-            res.sendStatus(200);
-        }
-    ).catch(
-        (error) => {
-            res.status(400).json({
-                error: error
-            });
-        }
-    );
-}
+// get and delete
 
-//OR USE THIS
-
-
-
-//user = {};
-
-// exports.signup = (req, res, next) => {
-
-//     // Save User to Database
-//     let { username, email, password } = req.body;
-//     password = bcrypt.hashSync(req.body.password, 10);
-
-//     let errors = [];
-
-//     // Validate Fields
-//     if(!username) {
-//       errors.push({ text: 'Please add a username' });
-//     }
-//     if(!email) {
-//       errors.push({ text: 'Please add email' });
-//     }
-//     if(!password) {
-//       errors.push({ text: 'Please add a password' });
-//     }
-
-//     // Check for errors
-//     if(errors.length > 0) {
-//       res.render('add', {
-//         errors,
-//       });
-//     } else {
-
-//       // Insert into table
-//       User.create({
-//         username,
-//         email,
-//         password,
-//       })
-//         .then(gig => res.sendStatus(200))
-//         .catch(err => res.render('error', {error:err.message}))
-//     }
-// };
-
-// exports.signin = (req, res) => {
-//     User.findOne({ where: { username: req.body.username } }).then(
-//         (user) => {
-//             if (!user) {
-//                 return res.status(401).json({
-//                     error: new Error('User not found!')
-//                 });
-//             }
-
-//             bcrypt.compare(req.body.password, user.password).then(
-//                 (valid) => {
-//                     if (!valid) {
-//                         return res.status(401).json({
-//                             error: new Error('Incorrect password!')
-//                         });
-//                     }
-//                     const token = jwt.sign(
-//                         { id: user._id },
-//                         config.secret,
-//                         { expiresIn: 86400 },
-//                     );
-
-//                     res.status(200).json(
-//                         {
-//                             user: user,
-//                             token: token
-//                         }
-//                     );
-//                 }
-//             ).catch(
-//                 (error) => {
-//                     res.status(500).json({
-//                         error: error
-//                     });
-//                 }
-//             );
-//         }
-//     ).catch(
-//         (error) => {
-//             res.status(500).json({
-//                 error: error
-//             });
-//         }
-//     );
-// }
-
-// exports.getUser = (req, res) => {
+// // GET USER
+// exports.getUser = (req, res, next) => {
 //     console.log(req.params.id);
 //     User.findOne({where: {username: req.params.id}}).then(
 //         (user) => {
@@ -247,10 +123,17 @@ exports.deleteUser = (req, res) => {
 //     );
 // }
 
-// exports.deleteUser = (req, res) => {
+// // DELETE USER
+// exports.deleteUser = (req, res, next) => {
 //     User.findOne({where: {username: req.params.id}}).then(
 //         (user) => {
-//             user.destroy();
+//             user.destroy().then(
+//                 () => {
+//                 res.status(201).json({
+//                     message: 'User deleted successfully!'
+//                 });
+//             }
+//             );
 //             res.sendStatus(200);
 //         }
 //     ).catch(

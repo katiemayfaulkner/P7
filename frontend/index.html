@@ -8,10 +8,45 @@
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <title> Club Groupomania </title>
     </head>
 
     <body>
+        <div class="window auth-modal" id="authModal">
+            <div class="box">
+                <img class="temporary-btn" src="img/close-white.png" alt="" id="hideAuth">
+                <div class="hero">
+                    <h1> Welcome to Club Groupomania! </h1>
+                    <p> The open forum for Groupomania employees. </p>
+                </div>
+                
+                <div class="auth">
+                
+                    <div class="section">
+                        <input type="text" name="first-name" placeholder="First name" class="authInput" required="true">
+                        <input type="text" name="last-name" placeholder="Last name" class="authInput" required="true">
+                        <input type="text" name="email" placeholder="Email" class="authInput" required="true">
+                        <input type="text" name="password" placeholder="Password" class="authInput" required="true">
+                        <a href="">
+                            <button id="login" class="authBtn"> Log In </button>
+                        </a>
+                    </div>
+                
+                    <div class="section">
+                        <input type="text" name="first-name" placeholder="First name" class="authInput" required="true">
+                        <input type="text" name="last-name" placeholder="Last name" class="authInput" required="true">
+                        <input type="text" name="email" placeholder="Email" class="authInput" required="true">
+                        <input type="text" name="password" placeholder="Password" class="authInput" required="true">
+                        <input type="text" name="retype-password" placeholder="Retype password" class="authInput" required="true">
+                        <a href="">
+                            <button id="signup" class="authBtn"> Sign Up </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <header class="main-header" id="scroll-top">
             <div class="container">
                 <div class="col-lg-10 col-md-9">
@@ -29,7 +64,7 @@
                         <div class="box">
                             <div class="title">
                                 <h3> Create New Post: </h3>
-                                <img src="img/close-white.png" alt="" id="closePost">
+                                <img class="close-btn" src="img/close-white.png" alt="" id="closePost">
                             </div>
                     
                             <div class="create-post">
@@ -51,7 +86,7 @@
                         <div class="box">
                             <div class="title">
                                 <h3> My account: </h3>
-                                <img src="img/close-white.png" alt="" id="closeUser">
+                                <img class="close-btn" src="img/close-white.png" alt="" id="closeUser">
                             </div>    
                             
                             <div class="profile">
@@ -70,9 +105,9 @@
                                 </div>
                                 <input type="button" value="Delete account" id="deleteBtn">
                             </div>
+                        </div>
                     </div>
                 </div>
-  
             </div>
         </header>
 
@@ -99,7 +134,7 @@
                                         <div class="box">
                                             <div class="title">
                                                 <h3> Comments: </h3>
-                                                <img src="img/close-white.png" alt="" id="closeComments">
+                                                <img class="close-btn" src="img/close-white.png" alt="" id="closeComments">
                                             </div>
 
                                             <div class="items">

@@ -1,3 +1,13 @@
+/*  LOGIN MODAL  */
+let authModal = document.getElementById('authModal');
+
+// hide comments modal (temporary)
+let hideLogin = document.getElementById('hideAuth');
+
+hideLogin.onclick = function() {  
+    authModal.style.visibility = "hidden";
+};
+
 /*  COMMENTS MODAL  */
 let commentsModal = document.getElementById('commentsModal');
 
