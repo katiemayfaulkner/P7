@@ -26,16 +26,13 @@ exports.signup = (req, res, next) => {
     bcrypt.hash(req.body.password, 10).then(
       (hash) => {
         const user = new User({
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
           email: req.body.email,
           password: hash
         });
         // Create new user and save to database
-        User.create({
-          firstName,
-          lastName,
-          email,
-          password
-        })
+        User.save()
         .then(
           () => {
             res.status(201).json({
@@ -51,7 +48,6 @@ exports.signup = (req, res, next) => {
         );
       }
     );
-
   } else {
     // Pass error if it's a weak password
     res.status(400).json({

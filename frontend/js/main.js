@@ -1,7 +1,7 @@
 /*  LOGIN MODAL  */
 let authModal = document.getElementById('authModal');
 
-// hide comments modal (temporary)
+// hide login modal (temporary)
 let hideLogin = document.getElementById('hideAuth');
 
 hideLogin.onclick = function() {  

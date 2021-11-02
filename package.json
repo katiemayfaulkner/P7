@@ -1,0 +1,33 @@
+{
+  "name": "project7",
+  "version": "1.0.0",
+  "description": "Create an online forum for Groupomania, this is a fullstack project.",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.3",
+    "mysql2": "^2.3.2",
+    "nodemon": "^2.0.12",
+    "sequelize": "^6.8.0",
+    "vue": "^2.6.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katiemayfaulkner/P7.git"
+  },
+  "author": "Katie May",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katiemayfaulkner/P7/issues"
+  },
+  "homepage": "https://github.com/katiemayfaulkner/P7#readme"
+}

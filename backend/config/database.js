@@ -11,11 +11,12 @@ const sequelize = new Sequelize('DB-P7', 'root', 'My1$ecure2P@$$sw0rd3', {
     idle: 10000
   },
 
-//   // disable logging; default: console.log
+  // disable logging; default: console.log
 //   logging: false
 });
 
-//Importing the models
+
+// Importing the models
 const userModel = require('../models/user');
 const postModel = require('../models/post');
 
@@ -28,3 +29,7 @@ sequelize.sync({ force: true })     // force:true = when we start our app all ta
   .then(() => {
     console.log('Database table is created!')
 });
+
+module.exports = {
+  User
+}

@@ -59,17 +59,12 @@ server.on('listening', () => {
 
 server.listen(port);
 
-//Import DATABASE config for connection, which takes place in db file
-const db = require('./config/database')
-
 app.use(cors());
-
 app.use(bodyParser.json()); // for parsing application/json
-
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 //Using Routes
 app.use('/user', userRoutes);
-// app.use('/post', postRoutes);
+app.use('/post', postRoutes);
 
 module.exports = app;
