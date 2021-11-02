@@ -100,43 +100,40 @@ exports.login = (req, res, next) => {
   );
 }
 
+// GET USER
+exports.getUser = (req, res, next) => {
+    console.log(req.params.id);
+    User.findOne({where: {email: req.params.id}}).then(
+        (user) => {
+            res.status(200).json(user)
+        }
+    ).catch(
+        (error) => {
+            res.status(400).json({
+                error: error
+            });
+        }
+    );
+}
 
-// get and delete
-
-// // GET USER
-// exports.getUser = (req, res, next) => {
-//     console.log(req.params.id);
-//     User.findOne({where: {username: req.params.id}}).then(
-//         (user) => {
-//             res.status(200).json(user)
-//         }
-//     ).catch(
-//         (error) => {
-//             res.status(400).json({
-//                 error: error
-//             });
-//         }
-//     );
-// }
-
-// // DELETE USER
-// exports.deleteUser = (req, res, next) => {
-//     User.findOne({where: {username: req.params.id}}).then(
-//         (user) => {
-//             user.destroy().then(
-//                 () => {
-//                 res.status(201).json({
-//                     message: 'User deleted successfully!'
-//                 });
-//             }
-//             );
-//             res.sendStatus(200);
-//         }
-//     ).catch(
-//         (error) => {
-//             res.status(400).json({
-//                 error: error
-//             });
-//         }
-//     );
-// }
+// DELETE USER
+exports.deleteUser = (req, res, next) => {
+    User.findOne({where: {email: req.params.id}}).then(
+        (user) => {
+            user.destroy().then(
+                () => {
+                res.status(201).json({
+                    message: 'User deleted successfully!'
+                });
+            }
+            );
+            res.sendStatus(200);
+        }
+    ).catch(
+        (error) => {
+            res.status(400).json({
+                error: error
+            });
+        }
+    );
+}
