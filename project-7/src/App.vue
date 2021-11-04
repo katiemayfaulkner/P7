@@ -5,9 +5,7 @@
 </template>
 
 <script>
-const App = new Vue({
 
-})
 </script>
 
 <style>
