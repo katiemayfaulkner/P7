@@ -9,6 +9,11 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       unique: true
     },
+    url: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      unique: true,
+    },
     user_id: {
       type: DataTypes.INTEGER(11),
       unique: true

@@ -12,14 +12,14 @@ const multer = require('../middleware/multer');
 // Controller
 const postCtrl = require('../controllers/post');
 
-//PROJECT 6 MODEL
 // Routes 
 router.post('', auth, multer, postCtrl.createPost);
-// router.get( '', auth, sauceCtrl.getAllSauces);
-// router.get('/:id', auth, sauceCtrl.getOneSauce);
-// router.put('/:id', auth, multer, sauceCtrl.modifySauce); //UPDATE an existing sauce - CRUD
-// router.delete('/:id', auth, sauceCtrl.deleteSauce); //DELETE a sauce - CRUD
-// router.post('/:id/like',auth, sauceCtrl.likeSauce);
+router.get( '', auth, postCtrl.getAllPosts);
+router.get('/:id', auth, postCtrl.getOnePost);
+router.post('/:id/like',auth, postCtrl.likePost);
+router.post('/:id/comment', auth, postCtrl.postComment);
+router.post('/:id/comments/list')
+// router.delete('/:id', auth, postCtrl.deletePost); //DELETE a post - CRUD
 
 // Make router available outside of this file
 module.exports = router;
