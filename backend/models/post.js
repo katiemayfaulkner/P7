@@ -11,7 +11,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     user_id: {
       type: DataTypes.INTEGER(11),
-      autoIncrement: true,
       unique: true
     },
     creator: {
