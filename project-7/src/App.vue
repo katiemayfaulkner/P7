@@ -1,10 +1,18 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <auth/>
   </div>
 </template>
 
 <script>
+import Auth from './components/auth.vue'
+
+export default {
+  name: 'app',
+  components: {
+    Auth,
+  }
+}
 
 </script>
 

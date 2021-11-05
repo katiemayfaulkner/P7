@@ -22,75 +22,39 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
-.main-header{
-   background-color: #091F43; 
-   padding: 20px 0;
-
-   .container{
-       display: flex;
-       justify-content: space-between;
-       width: 100%;
-
-       div{
-           display: block;
-           
-           .logo{
-               height: 36px;
-               width: auto;
-            }
-            
-            h1{
-               margin-left: 50px;
-               font-size: 22px;
-               color: rgb(255, 255, 255);
-               line-height: 36px;
-           }
-       }
-
-        .header-btns{
-            display: flex;
-            flex-wrap: nowrap;
-            
-            img{
-                height: 36px;
-                width: auto;
-                margin: 18px 10px 0;
-                cursor: pointer;  
-            }   
-        }
-    }
+.main-header {
+  background-color: #091F43;
+  padding: 20px 0;
 }
-
-// Small devices (phones, 700px and down)
-@media only screen and (max-width: 700px) {
-     
-    .main-header{
-
-        .container{
-
-            div{
-                .logo{
-                    height: 32px;
-                    width: auto;
-                }
-
-                h1{
-                    margin-left: 50px;
-                    font-size: 20px;
-                }
-            }
-
-            .header-btns{
-
-                img{
-                   height: 30px;
-                   margin-left: 7px; 
-                }
-            }
-        }
-    }
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.main-header .container div {
+  display: block;
+}
+.main-header .container div .logo {
+  height: 36px;
+  width: auto;
+}
+.main-header .container div h1 {
+  margin-left: 50px;
+  font-size: 22px;
+  color: white;
+  line-height: 36px;
+}
+.main-header .container .header-btns {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.main-header .container .header-btns img {
+  height: 36px;
+  width: auto;
+  margin: 18px 10px 0;
+  cursor: pointer;
 }
 
 </style>
