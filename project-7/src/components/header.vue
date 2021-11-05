@@ -9,12 +9,12 @@
             </div>
 
             <div class="header-btns col-lg-2 col-md-3">  
-              <router-link  to="/createPost">
+              <!-- <router-link  to="/createPost"> -->
                 <img src="../assets/post.png" alt="" id="showPost" to="/main">
-              </router-link>
-              <router-link to="/profile">
+              <!-- </router-link> -->
+              <!-- <router-link to="/profile"> -->
                 <img src="../assets/user.png" alt="" id="showUser">   
-              </router-link>
+              <!-- </router-link> -->
             </div>
         </div>
     </header>
