@@ -22,13 +22,13 @@
 
 <script>
 export default {
-    
+  name: 'createPost'
 }
 </script>
 
 <style scoped>
 
-.main-header .container .header-btns .window {
+.window {
   visibility: hidden;
   position: fixed;
   z-index: 1;
@@ -38,7 +38,7 @@ export default {
   left: 0;
   background-color: rgba(117, 114, 114, 0.5);
 }
-.main-header .container .header-btns .window .box {
+.window .box {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -51,39 +51,39 @@ export default {
   background-color: #091F43;
   color: white;
 }
-.main-header .container .header-btns .window .box .title {
+.box .title {
   display: flex;
   justify-content: space-between;
 }
-.main-header .container .header-btns .window .box .title h3 {
+.window .box .title h3 {
   font-size: 23px;
   font-weight: 300px;
 }
-.main-header .container .header-btns .window .box .title .close-btn {
+.window .box .title .close-btn {
   height: 30px;
   width: auto;
   margin: 0;
 }
-.main-header .container .header-btns .window .box .create-post {
+.window .box .create-post {
   margin-top: 30px;
 }
-.main-header .container .header-btns .window .box .create-post .img-input {
+.window .box .create-post .img-input {
   margin-bottom: 25px;
 }
-.main-header .container .header-btns .window .box .create-post .text-input {
+.window .box .create-post .text-input {
   margin: 5px 0;
 }
-.main-header .container .header-btns .window .box .create-post .text-input label {
+.window .box .create-post .text-input label {
   width: 100%;
   font-size: 21px;
 }
-.main-header .container .header-btns .window .box .create-post .text-input input {
+.window .box .create-post .text-input input {
   width: 100%;
   height: 100px;
   overflow: scroll;
   border: 2px solid black;
 }
-.main-header .container .header-btns .window .box .create-post .submit-btn {
+.window .box .create-post .submit-btn {
   padding: 7px;
   border-radius: 12px;
   width: 100px;

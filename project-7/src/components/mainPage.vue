@@ -9,18 +9,18 @@
                         <div class="content">
                             <div class="top-bar">
                                 <div class="user-info">
-                                    <img src="img/user-black.png" alt="">
+                                    <img src="../assets/user-black.png" alt="">
                                     <p class="name-container"> Katie May </p>
                                 </div>
 
                                 <div>
-                                    <img src="img/comments.png" alt="" id="commentsBtn">
-                                    <img src="img/bin-black.png" alt="">
+                                    <img src="../assets/comments.png" alt="" id="commentsBtn">
+                                    <img src="../assets/bin-black.png" alt="">
                                 </div>
                             </div>
 
                             <div class="img-container">
-                                <img src="img/bob.jpg" alt="">
+                                <img src="../assets/bob.jpg" alt="">
                             </div>
 
                             <div class="caption-container">
@@ -32,12 +32,12 @@
 
                             <div class="post-actions">
                                 <div class="likes">
-                                    <img class="like" src="img/like.png" alt="">
-                                    <img class="like-active" src="img/like-active.png" alt="">
+                                    <img class="like" src="../assets/like.png" alt="">
+                                    <img class="like-active" src="../assets/like-active.png" alt="">
                                 </div>
                                 <div class="dislikes">
-                                    <img class="dislike" src="img/dislike.png" alt="">
-                                    <img class="dislike-active" src="img/dislike-active.png" alt="">
+                                    <img class="dislike" src="../assets/dislike.png" alt="">
+                                    <img class="dislike-active" src="../assets/dislike-active.png" alt="">
                                 </div>
 
                                 <form class="comments">
@@ -52,17 +52,17 @@
                         <div class="content">
                             <div class="top-bar">
                                 <div class="user-info">
-                                    <img src="img/user-black.png" alt="">
+                                    <img src="../assets/user-black.png" alt="">
                                     <p class="name-container"> Janice John </p>
                                 </div>
                                 <div>
-                                    <img src="img/comments.png" alt="">
-                                    <img src="img/bin-black.png" alt="">
+                                    <img src="../assets/comments.png" alt="">
+                                    <img src="../assets/bin-black.png" alt="">
                                 </div>
                             </div>
 
                             <div class="img-container">
-                                <img src="img/anotherTest.jpeg" alt="">
+                                <img src="../assets/anotherTest.jpeg" alt="">
                             </div>
 
                             <div class="caption-container">
@@ -70,8 +70,8 @@
                             </div>
 
                             <div class="post-actions">
-                                <img src="img/like.png" alt="">
-                                <img src="img/dislike.png" alt="">  
+                                <img src="../assets/like.png" alt="">
+                                <img src="../assets/dislike.png" alt="">  
                             </div>
                         </div>
                     </div>
@@ -114,8 +114,9 @@
 </template>
 
 <script>
+
 export default {
-    
+    name: 'MainPage'
 }
 </script>
 
@@ -155,6 +156,7 @@ export default {
   justify-content: space-between;
 }
 .main-page .container .posts .box .post .content .top-bar img {
+  margin-right: 10px;
   height: 30px;
   cursor: pointer;
 }
@@ -162,7 +164,6 @@ export default {
   display: flex;
 }
 .main-page .container .posts .box .post .content .top-bar .user-info p {
-  margin-left: 10px;
   line-height: 30px;
 }
 

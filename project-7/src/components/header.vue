@@ -3,14 +3,18 @@
         <div class="container">
             <div class="col-lg-10 col-md-9">
                 <a href="index.html">
-                    <img class="logo" src="Groupomania_Logos/icon-left-font-monochrome-white.svg" alt="">
+                    <img class="logo" src="../assets/icon-left-font-monochrome-white.svg" alt="">
                 </a>
                 <h1> Welcome, Katie!</h1>
             </div>
 
             <div class="header-btns col-lg-2 col-md-3">  
-                <img src="img/post.png" alt="" id="showPost">
-                <img src="img/user.png" alt="" id="showUser"> 
+              <router-link  to="/createPost">
+                <img src="../assets/post.png" alt="" id="showPost" to="/main">
+              </router-link>
+              <router-link to="/profile">
+                <img src="../assets/user.png" alt="" id="showUser">   
+              </router-link>
             </div>
         </div>
     </header>
@@ -18,7 +22,7 @@
 
 <script>
 export default {
-    
+  name: 'Header'
 }
 </script>
 

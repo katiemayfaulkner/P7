@@ -35,7 +35,7 @@ export default {
 
 <style scoped>
 
-.main-header .container .header-btns .window {
+.window {
   visibility: hidden;
   position: fixed;
   z-index: 1;
@@ -45,7 +45,7 @@ export default {
   left: 0;
   background-color: rgba(117, 114, 114, 0.5);
 }
-.main-header .container .header-btns .window .box {
+.window .box {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -58,41 +58,41 @@ export default {
   background-color: #091F43;
   color: white;
 }
-.main-header .container .header-btns .window .box .title {
+.window .box .title {
   display: flex;
   justify-content: space-between;
 }
-.main-header .container .header-btns .window .box .title h3 {
+.window .box .title h3 {
   font-size: 23px;
   font-weight: 300px;
 }
-.main-header .container .header-btns .window .box .title .close-btn {
+.window .box .title .close-btn {
   height: 30px;
   width: auto;
   margin: 0;
 }
-.main-header .container .header-btns .window .box .profile {
+.window .box .profile {
   margin-top: 30px;
 }
-.main-header .container .header-btns .window .box .profile img {
+.window .box .profile img {
   width: 50px;
   height: auto;
   margin-bottom: 20px;
 }
-.main-header .container .header-btns .window .box .profile div {
+.window .box .profile div {
   display: flex;
   flex-wrap: wrap;
   color: white;
 }
-.main-header .container .header-btns .window .box .profile div .title {
+.window .box .profile div .title {
   font-weight: 500;
 }
-.main-header .container .header-btns .window .box .profile div p {
+.window .box .profile div p {
   padding: 10px 5px;
   font-size: 1.2rem;
   font-weight: 300;
 }
-.main-header .container .header-btns .window .box .profile input {
+.window .box .profile input {
   padding: 7px;
   border-radius: 12px;
   border: none;
