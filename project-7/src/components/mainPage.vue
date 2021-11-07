@@ -266,4 +266,15 @@ export default {
   color: white;
 }
 
+@media only screen and (max-width: 770px) {
+  
+ .main-page .container .posts .box .post .content .post-actions div img {
+    margin-right: 10px;
+    height: 20px;
+  }
+  .main-page .container .posts .box .post .content .post-actions .comments .input {
+    width: 115px;
+  } 
+}
+
 </style>

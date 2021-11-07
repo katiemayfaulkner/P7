@@ -2,90 +2,88 @@
   <div class="window">
     <div class="box">
         <div class="hero">
-        <h1>Welcome to your new account!</h1>
-        <p> or <router-link to="/login"> login </router-link> to your existing account.</p>
-        </div>
-
-        <div class="auth">
-            <input
-            name="first-name"
-            type="text"
-            placeholder="First name"
-            class="authInput signupInput"
-            required="true"
-            v-on:keyup="checkform()"
-            />
-            <input
-            name="last-name"
-            type="text"
-            placeholder="Last name"
-            class="authInput signupInput"
-            required="true"
-            v-on:keyup="checkform()"
-            />
-            <input
-            name="email"
-            type="text"
-            placeholder="Email"
-            class="authInput signupInput"
-            required="true"
-            v-on:keyup="checkform()"
-            />
-
-            <div>
-                <input
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                    class="authInput signupInput firstPswd"
-                    required="true"
-                    id="signupPassword"
-                    v-on:keyup="checkform()"
-                />
-                <img
-                    @click="showFirstPassword"
-                    src="../assets/hidden.png"
-                    alt=""
-                    id="hideFirstPswd"
-                />
-                <img
-                    @click="showFirstPassword"
-                    src="../assets/visible.png"
-                    alt=""
-                    id="showFirstPswd"
-                    style="visibility: hidden"
-                />
+            <h1>Welcome to your new account!</h1>
+            <p> or <router-link to="/login"> login </router-link> to your existing account.</p>
             </div>
 
-            <div>
+            <form class="auth" @submit.prevent="sendForm">
                 <input
-                    name="retype-password"
-                    type="password"
-                    placeholder="Retype password"
-                    class="authInput signupInput secondPswd"
-                    required="true"
-                    id="retypePassword"
-                    v-on:keyup="comparePasswords()"
+                name="first-name"
+                type="text"
+                placeholder="First name"
+                class="authInput signupInput"
+                required="true"
+                v-model="form.firstName"
                 />
-                <img
-                    @click="showSecondPassword"
-                    src="../assets/hidden.png"
-                    alt=""
-                    id="hideSecondPswd"
+                <input
+                name="last-name"
+                type="text"
+                placeholder="Last name"
+                class="authInput signupInput"
+                required="true"
+                v-model="form.lastName"
                 />
-                <img
-                    @click="showSecondPassword"
-                    src="../assets/visible.png"
-                    alt=""
-                    id="showSecondPswd"
-                    style="visibility: hidden"
+                <input
+                name="email"
+                type="text"
+                placeholder="Email"
+                class="authInput signupInput"
+                required="true"
+                v-model="form.email"
                 />
-            </div>
+                <div>
+                    <input
+                        name="password"
+                        type="password"
+                        placeholder="Password"
+                        class="authInput signupInput firstPswd"
+                        required="true"
+                        id="signupPassword"
+                        v-model="form.password"
+                    />
+                    <img
+                        @click="showFirstPassword"
+                        src="../assets/hidden.png"
+                        alt=""
+                        id="hideFirstPswd"
+                    />
+                    <img
+                        @click="showFirstPassword"
+                        src="../assets/visible.png"
+                        alt=""
+                        id="showFirstPswd"
+                        style="visibility: hidden"
+                    />
+                </div>
 
-            <button id="signup" class="authBtn" disabled="disabled" >Sign Up</button>
+                <div>
+                    <input
+                        name="retype-password"
+                        type="password"
+                        placeholder="Retype password"
+                        class="authInput signupInput secondPswd"
+                        required="true"
+                        id="retypePassword"
+                    />
+                    <img
+                        @click="showSecondPassword"
+                        src="../assets/hidden.png"
+                        alt=""
+                        id="hideSecondPswd"
+                    />
+                    <img
+                        @click="showSecondPassword"
+                        src="../assets/visible.png"
+                        alt=""
+                        id="showSecondPswd"
+                        style="visibility: hidden"
+                    />
+                </div>
+
+                <button id="signup" class="authBtn" >Sign Up</button>
+            </form>
         </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -140,48 +138,35 @@
             },
 
             // Check both passwords are the same
-            comparePasswords: function (){
-                let firstPswd = document.getElementById('firstPswd');
-                console.log(firstPswd)
-                let secondPswd = document.getElementById('secondPswd');
+            // comparePasswords: function (){
+            //     let firstPswd = document.getElementById('firstPswd');
+            //     console.log(firstPswd)
+            //     let secondPswd = document.getElementById('secondPswd')
+            //     let submitBtn = document.getElementById('signup');
 
-                if(firstPswd === secondPswd){
-                    console.log('same as first');
-                } else {
-                    //check if form is all filled in
-                    // if yes, enable login button
-                }
-            },
+            //     let cansubmit = true;
 
-            // Submit button is disabled unless form is filled
-            checkform: function() {
-                let submitBtn = document.getElementById('signup');
-                let form = document.getElementsByClassName('signupInput');
+            //     if(firstPswd.value !== secondPswd.value){
+            //         console.log('Passwords must match!');
+            //         cansubmit = false
+            //     } else {
+            //         console.log('Matching passwords!')
+            //         cansubmit = true
+            //     }
+            // },
 
-                let cansubmit = true;
-
-                for (let i = 0; i < form.length; i++) {
-                    if (form[i] == 0) cansubmit = false;
-                }
-
-                if (cansubmit) {
-                    submitBtn.disabled = false;
-                }
-                else {
-                    submitBtn.disabled = true;
-                }
-            },
+            // FOR HTML ->  disabled="disabled"  +  v-on:keyup="comparePasswords()"
 
             sendForm() {
                 let self = this;
                 axios.post("http://localhost:3000/api/user/signup", this.form)
-                .then(function (response) {
+                .then(response => {
                     console.log("Response", response.data);
-                    self.$router.push({ name: "Login" });
-				})
-                .catch(function (err) {
-                    console.log("Error", err);
-                });
+                    self.$router.push({ name: "login" });
+                })
+                .catch(error => {
+                    console.error(error);
+                })
             },
         },
     };
@@ -278,4 +263,13 @@
   border: none;
   color: white;
 }
+
+@media only screen and (max-width: 770px) {
+  
+ .window .box {
+   padding: 50px 0;
+   width: 83%;
+ } 
+}
+
 </style>

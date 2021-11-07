@@ -4,6 +4,10 @@ const cors = require("cors");               // allows restricted resources to be
 const app = express();
 const path = require('path');               // provides utilities for working with file and directory paths
 
+// Defining Routes
+const userRoutes = require("./routes/user");
+const postRoutes = require("./routes/post");
+
 // Node server
 const http = require('http');
 
@@ -60,19 +64,13 @@ db.authenticate()
   .then(()=> console.log('Database connected!'))
   .catch(err => console.log('Error: ' + err))
 
+app.use(cors());
 
-// Defining Routes
-const userRoutes = require("./routes/user");
-const postRoutes = require("./routes/post");
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 //Using Routes
 app.use('api/user', userRoutes);
 app.use('api/post', postRoutes);
-
-app.use(cors());
-app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/images', express.static(path.join(__dirname, 'images')));
-
-// Exporting the web application
-module.exports = app;

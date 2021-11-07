@@ -129,4 +129,11 @@ export default {
   font-weight: 200;
 }
 
+@media only screen and (max-width: 770px) {
+  
+  .window .box{
+    width: 90%;
+  } 
+}
+
 </style>

@@ -12,13 +12,13 @@ const multer = require('../middleware/multer');
 // Controller
 const postCtrl = require('../controllers/post');
 
-// Routes 
+// Routes -> api/post 
 router.post('', auth, multer, postCtrl.createPost);
 router.get( '', auth, postCtrl.getAllPosts);
 router.get('/:id', auth, postCtrl.getOnePost);
 router.post('/:id/like',auth, postCtrl.likePost);
 router.post('/:id/comment', auth, postCtrl.postComment);
-router.post('/:id/comments/list')
+router.get('/:id/comments/list/:id',postCtrl.getAllComments)
 // router.delete('/:id', auth, postCtrl.deletePost); //DELETE a post - CRUD
 
 // Make router available outside of this file

@@ -62,7 +62,7 @@ export default {
 .window .box .hero {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 .window .box .hero a{
     display: flex;
@@ -107,6 +107,16 @@ export default {
   background-color: white;
   color: #091F43;
   font-size: 17px;
+}
+
+@media only screen and (max-width: 770px) {
+  
+  .window .box{
+    width: 90%;
+  } 
+  .window .box input {
+    margin-top: 10px;
+  }
 }
 
 </style>

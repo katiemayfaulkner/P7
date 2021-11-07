@@ -5,8 +5,8 @@ module.exports = new Sequelize('DB-P7', 'root', 'My1$ecure2P@$$sw0rd3', {
   operatorsAliases: 0,
 
   pool: {
-      max: 5,   // max number of connections permissible in a pool
-      min: 0,   // min number of connections permissible in a pool
+      max: 5,   // max number of connections allowed in a pool
+      min: 0,   // min number of connections allowed in a pool
       acquire: 30000,   // max time, in milliseconds, that a connection can be held idly before being released
       idle: 10000   // max time, in milliseconds, that the pool seeks to make the connection before an error message appears
   },

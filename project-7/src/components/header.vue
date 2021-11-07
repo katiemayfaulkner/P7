@@ -61,4 +61,23 @@ export default {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 770px) {
+  
+ .main-header .container div .logo {
+    height: 32px;
+    width: auto;
+  }
+  .main-header .container div h1 {
+    margin-left: 50px;
+    font-size: 20px;
+  }
+  .main-header .container .header-btns img {
+    height: 30px;
+    margin-left: 7px;
+  }
+  .main-header .container .header-btns .window .box {
+    width: 90%;
+  } 
+}
+
 </style>

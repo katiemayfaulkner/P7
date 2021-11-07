@@ -3,7 +3,7 @@
     <div class="box">
         <div class="hero">
         <h1>Welcome back to your account!</h1>
-        <p> or <router-link to="/signup"> signup </router-link> to your existing account.</p>
+        <p> or <router-link to="/signup"> signup </router-link> and create an account.</p>
         </div>
 
         <div class="auth">
@@ -13,7 +13,6 @@
                 placeholder="First name"
                 class="authInput loginInput"
                 required="true"
-                v-on:keyup="checkform()"
             />
             <input
                 type="text"
@@ -21,7 +20,6 @@
                 placeholder="Last name"
                 class="authInput loginInput"
                 required="true"
-                v-on:keyup="checkform()"
             />
             <input
                 type="text"
@@ -29,7 +27,6 @@
                 placeholder="Email"
                 class="authInput loginInput"
                 required="true"
-                v-on:keyup="checkform()"
             />
             <div>
                 <input
@@ -39,7 +36,6 @@
                 class="authInput loginInput"
                 required="true"
                 id="loginPassword"
-                v-on:keyup="checkform()"
                 />
                 <img
                 @click="showLogin"
@@ -181,4 +177,13 @@ export default {
   border: none;
   color: white;
 }
+
+@media only screen and (max-width: 770px) {
+  
+ .window .box {
+   padding: 50px 0;
+   width: 83%;
+ } 
+}
+
 </style>

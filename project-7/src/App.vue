@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <!-- <Welcome/>
-    <router-view/> -->
+    <!-- <Welcome/> -->
     <Header/>
     <MainPage/>
     <router-view/>

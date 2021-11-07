@@ -96,4 +96,13 @@ export default {
   text-decoration: none;
   color: black;
 }
+
+@media only screen and (max-width: 770px) {
+  
+ .window .box {
+   padding: 50px 15px;
+   width: 83%;
+ } 
+}
+
 </style>
