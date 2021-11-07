@@ -1,42 +1,43 @@
 <template>
-    <div class="window" id="userModal">
-        <div class="box">
-            <div class="title">
-                <h3> My account: </h3>
-                <img class="close-btn" src="img/close-white.png" alt="" id="closeUser">
-            </div>    
-            
-            <div class="profile">
-                <img src="img/user.png" alt="">
-                <div>
-                    <p class="title">Username:</p>
-                    <p id="userName"> blablabla</p>
-                </div>
-                <div>
-                    <p class="title">Email:</p>
-                    <p id="userEmail"> blablabla</p>
-                </div>
-                <div>
-                    <p class="title">Password:</p>
-                    <p> ******** </p>
-                </div>
-                <input type="button" value="Delete account" id="deleteBtn">
-                <input type="button" value="Edit my profile" id="editProfile">
-            </div>
-        </div>
+  <div class="window">
+    <div class="box">
+      <div class="hero">
+        <h1> My account: </h1>   
+        <router-link to="/home">
+          <img src="../assets/close-white.png" alt="">
+        </router-link>
+      </div>
+      
+      <div class="profile">
+          <img src="../assets/user.png" alt="">
+          <div>
+              <p class="title">Username:</p>
+              <p id="userName"> blablabla</p>
+          </div>
+          <div>
+              <p class="title">Email:</p>
+              <p id="userEmail"> blablabla</p>
+          </div>
+          <div>
+              <p class="title">Password:</p>
+              <p> ******** </p>
+          </div>
+      </div>
+          <input type="button" value="Edit my profile" id="editProfile">
+          <input type="button" value="Delete account" id="deleteBtn">
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-    
+   name: 'viewProfile', 
 }
 </script>
 
 <style scoped>
 
 .window {
-  visibility: hidden;
   position: fixed;
   z-index: 1;
   right: 0;
@@ -58,26 +59,32 @@ export default {
   background-color: #091F43;
   color: white;
 }
-.window .box .title {
-  display: flex;
-  justify-content: space-between;
+.window .box .hero {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
 }
-.window .box .title h3 {
-  font-size: 23px;
-  font-weight: 300px;
+.window .box .hero a{
+    display: flex;
+    line-height: 25px;
+    margin-bottom: 10px;
+    text-decoration: none;
 }
-.window .box .title .close-btn {
-  height: 30px;
-  width: auto;
-  margin: 0;
+.window .box .hero h1 {
+    font-size: 22px;
+    font-weight: 300px;
+}
+.window .box .hero a img { 
+  margin-right: 5px;
+  height: 25px;  
 }
 .window .box .profile {
-  margin-top: 30px;
+  margin: 20px 0;
 }
 .window .box .profile img {
   width: 50px;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .window .box .profile div {
   display: flex;
@@ -88,12 +95,13 @@ export default {
   font-weight: 500;
 }
 .window .box .profile div p {
-  padding: 10px 5px;
+  padding-right: 10px;
   font-size: 1.2rem;
-  font-weight: 300;
+  font-weight: 200;
 }
-.window .box .profile input {
+.window .box input {
   padding: 7px;
+  margin-right: 15px;
   border-radius: 12px;
   border: none;
   background-color: white;

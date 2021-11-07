@@ -1,21 +1,23 @@
 <template>
-    <div class="window" id="postModal">
+    <div class="window">
         <div class="box">
-            <div class="title">
-                <h3> Create New Post: </h3>
-                <img class="close-btn" src="img/close-white.png" alt="" id="closePost">
-            </div>
+          <div class="hero">
+              <h1> Create New Post: </h1>
+              <router-link to="/home">
+                  <img src="../assets/close-white.png" alt="">
+              </router-link>
+          </div>
 
-            <div class="create-post">
-                <div class="img-input">
-                    <input type="file">
-                </div>
-                <div class="text-input">
-                    <label for="text"> Insert your caption here: </label>
-                    <input type="text" maxlength="150">
-                </div>
-                <input type="submit" value="Submit" class="submit-btn">
-            </div>
+          <div class="create-post">
+              <div class="img-input">
+                  <input type="file">
+              </div>
+              <div class="text-input">
+                  <label for="text"> Insert your caption here: </label>
+                  <input type="text" maxlength="150">
+              </div>
+              <input type="submit" value="Submit" class="submit-btn">
+          </div>
         </div>
     </div>
 </template>
@@ -29,7 +31,6 @@ export default {
 <style scoped>
 
 .window {
-  visibility: hidden;
   position: fixed;
   z-index: 1;
   right: 0;
@@ -51,21 +52,27 @@ export default {
   background-color: #091F43;
   color: white;
 }
-.box .title {
-  display: flex;
-  justify-content: space-between;
+.window .box .hero {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
 }
-.window .box .title h3 {
-  font-size: 23px;
-  font-weight: 300px;
+.window .box .hero a{
+    display: flex;
+    line-height: 25px;
+    margin-bottom: 10px;
+    text-decoration: none;
 }
-.window .box .title .close-btn {
-  height: 30px;
-  width: auto;
-  margin: 0;
+.window .box .hero h1 {
+    font-size: 22px;
+    font-weight: 300px;
+}
+.window .box .hero a img { 
+  margin-right: 5px;
+  height: 25px;  
 }
 .window .box .create-post {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .window .box .create-post .img-input {
   margin-bottom: 25px;

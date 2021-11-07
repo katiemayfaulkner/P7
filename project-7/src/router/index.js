@@ -3,18 +3,30 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-import Auth from '../components/auth.vue'
-import Home from '../components/header.vue'
+import Welcome from '../components/welcome.vue'
+import Login from '../components/login.vue'
+import Signup from '../components/signup.vue'
+import Home from '../components/mainPage.vue'
 import createPost from '../components/createPost.vue'
 import viewProfile from '../components/viewProfile.vue'
-
+import viewComments from '../components/viewComments.vue'
 
 export default new Router({
   routes: [
     {
-      path: '/auth',
-      name: 'Auth',
-      component: Auth
+      path: '/welcome',
+      name: 'Welcome',
+      component: Welcome
+    },
+    {
+      path: '/signup',
+      name: 'Signup',
+      component: Signup
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     },
     {
       path: '/home',
@@ -27,9 +39,14 @@ export default new Router({
       component: createPost
     },
     {
-      path: '/viewProfile',
+      path: '/profile',
       name: 'viewProfile',
       component: viewProfile
+    },
+    {
+      path: '/comments',
+      name: 'viewComments',
+      component: viewComments
       // props: true 
     }
   ]

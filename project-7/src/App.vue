@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <auth/>
+    <!-- <Welcome/>
+    <router-view/> -->
     <Header/>
     <MainPage/>
-    <createPost/>
+    <router-view/>
+
   </div>
 </template>
 
@@ -11,18 +13,17 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap-vue/dist/bootstrap-vue.css"
 
-import Auth from './components/auth.vue'
+// import Welcome from './components/welcome.vue'
 import Header from './components/header.vue'
 import MainPage from './components/mainPage.vue'
-import createPost from './components/createPost.vue'
+
 
 export default {
   name: 'app',
   components: {
-    Auth,
+    // Welcome,
     Header,
     MainPage,
-    createPost,
   }
 }
 

@@ -14,7 +14,9 @@
                                 </div>
 
                                 <div>
+                                  <router-link to="/comments">
                                     <img src="../assets/comments.png" alt="" id="commentsBtn">
+                                  </router-link>
                                     <img src="../assets/bin-black.png" alt="">
                                 </div>
                             </div>
@@ -118,6 +120,7 @@
 export default {
     name: 'MainPage'
 }
+
 </script>
 
 <style scoped>

@@ -66,8 +66,8 @@ const userRoutes = require("./routes/user");
 const postRoutes = require("./routes/post");
 
 //Using Routes
-app.use('/user', userRoutes);
-app.use('/post', postRoutes);
+app.use('api/user', userRoutes);
+app.use('api/post', postRoutes);
 
 app.use(cors());
 app.use(bodyParser.json()); // for parsing application/json
