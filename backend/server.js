@@ -1,7 +1,7 @@
 const express = require("express");         // back end web application framework for Node.js
+const app = express();
 const bodyParser = require("body-parser");  // Node. js body parsing middleware
 const cors = require("cors");               // allows restricted resources to be requested from diff domain from which the first resource was served
-const app = express();
 const path = require('path');               // provides utilities for working with file and directory paths
 
 // Defining Routes

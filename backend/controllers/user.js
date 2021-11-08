@@ -150,76 +150,85 @@
 
 // module.exports = User
 
-const User = require("../models/user");
 
-exports.signup = (req, res,) => {
-  // Create a user
-  const user = new User({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    password: req.body.password,
-  });
 
-  // Save user in the database
-  User.create(user, (err, data) => {
-    if (err)
-      res.status(500).send({
-        message:
-          err.message || "An error occurred while creating the user."
-      });
-    else res.send(data);
-  });
-};
 
-exports.getOne = (req, res) => {
-  User.findById(req.params.user_id, (err, data) => {
-    if (err) {
-      if (err.kind === "not_found") {
-        res.status(404).send({
-          message: `Failed to find user with id ${req.params.user_id}.`
-        });
-      } else {
-        res.status(500).send({
-          message: "Error retrieving user with id " + req.params.user_id
-        });
-      }
-    } else res.send(data);
-  });
-};
 
-exports.modifyUser = (req, res) => {
-  User.updateById(
-    req.params.user_id,
-    new User(req.body),
-    (err, data) => {
-      if (err) {
-        if (err.kind === "not_found") {
-          res.status(404).send({
-            message: `Failed to find user with id ${req.params.user_id}.`
-          });
-        } else {
-          res.status(500).send({
-            message: "Error updating user with id " + req.params.user_id
-          });
-        }
-      } else res.send(data);
-    }
-  );
-};
 
-exports.deleteUser = (req, res) => {
-  User.remove(req.params.user_id, (err, data) => {
-    if (err) {
-      if (err.kind === "not_found") {
-        res.status(404).send({
-          message: `Failed to find user with id ${req.params.user_id}.`
-        });
-      } else {
-        res.status(500).send({
-          message: "Could not delete user with id " + req.params.user_id
-        });
-      }
-    } else res.send({ message: `User deleted successfully!` });
-  });
-};
+
+
+
+
+// const User = require("../models/user");
+
+// exports.signup = (req, res,) => {
+//   // Create a user
+//   const user = new User({
+//     firstName: req.body.firstName,
+//     lastName: req.body.lastName,
+//     email: req.body.email,
+//     password: req.body.password,
+//   });
+
+//   // Save user in the database
+//   User.create(user, (err, data) => {
+//     if (err)
+//       res.status(500).send({
+//         message:
+//           err.message || "An error occurred while creating the user."
+//       });
+//     else res.send(data);
+//   });
+// };
+
+// exports.getOne = (req, res) => {
+//   User.findById(req.params.user_id, (err, data) => {
+//     if (err) {
+//       if (err.kind === "not_found") {
+//         res.status(404).send({
+//           message: `Failed to find user with id ${req.params.user_id}.`
+//         });
+//       } else {
+//         res.status(500).send({
+//           message: "Error retrieving user with id " + req.params.user_id
+//         });
+//       }
+//     } else res.send(data);
+//   });
+// };
+
+// exports.modifyUser = (req, res) => {
+//   User.updateById(
+//     req.params.user_id,
+//     new User(req.body),
+//     (err, data) => {
+//       if (err) {
+//         if (err.kind === "not_found") {
+//           res.status(404).send({
+//             message: `Failed to find user with id ${req.params.user_id}.`
+//           });
+//         } else {
+//           res.status(500).send({
+//             message: "Error updating user with id " + req.params.user_id
+//           });
+//         }
+//       } else res.send(data);
+//     }
+//   );
+// };
+
+// exports.deleteUser = (req, res) => {
+//   User.remove(req.params.user_id, (err, data) => {
+//     if (err) {
+//       if (err.kind === "not_found") {
+//         res.status(404).send({
+//           message: `Failed to find user with id ${req.params.user_id}.`
+//         });
+//       } else {
+//         res.status(500).send({
+//           message: "Could not delete user with id " + req.params.user_id
+//         });
+//       }
+//     } else res.send({ message: `User deleted successfully!` });
+//   });
+// };

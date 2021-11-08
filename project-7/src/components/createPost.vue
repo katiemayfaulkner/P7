@@ -8,11 +8,7 @@
               </router-link>
           </div>
 
-          <div class="create-post">
-
-
-
-            
+          <div class="create-post">            
               <div class="img-input">
                   <div class="preview">
                     <img class="img-preview" style="{ 'background-image': `url(${previewImage})` }" @click="selectImage">
@@ -20,10 +16,7 @@
 
                   <input type="file" id="postImg" accept="image/*" @input="pickFile" ref="fileInput">
               </div>
-
-
-
-
+              
               <div class="text-input">
                   <label for="text"> Insert your caption here: </label>
                   <input type="text" maxlength="150">

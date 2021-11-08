@@ -6,7 +6,7 @@
             <p> or <router-link to="/login"> login </router-link> to your existing account.</p>
             </div>
 
-            <form class="auth" @submit.prevent="sendForm">
+            <div class="auth">
                 <input
                 name="first-name"
                 type="text"
@@ -80,13 +80,15 @@
                     />
                 </div>
 
-                <button id="signup" class="authBtn" >Sign Up</button>
-            </form>
+                <button id="signup" class="authBtn" @click="signUp">Sign Up</button>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+    import AuthService from '../services/auth';
+
     // import the promise-based library used with Node.js + your browser to make asynchronous Js HTTP requests
     import axios from 'axios'; 
 
@@ -157,7 +159,7 @@
 
             // FOR HTML ->  disabled="disabled"  +  v-on:keyup="comparePasswords()"
 
-            sendForm() {
+            signUp() {
                 let self = this;
                 axios.post("http://localhost:3000/api/user/signup", this.form)
                 .then(response => {
@@ -170,6 +172,20 @@
                     console.error(error);
                 })
             },
+            // async signUp() {
+            //     try {
+            //         const credentials = {
+            //             firstName: this.firstName,
+            //             lastName: this.lastName, 
+            //             email: this.email,
+            //             password: this.password,
+            //         };
+            //         const response = await AuthService.signUp(credentials);
+            //         this.msg = response.msg;
+            //     } catch (error) {
+            //         this.msg = error.response.data.msg;
+            //     }
+            // },
         },
     };
 </script>

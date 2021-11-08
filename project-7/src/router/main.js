@@ -13,6 +13,8 @@ import editProfile from '../components/editProfile.vue'
 import viewComments from '../components/viewComments.vue'
 
 export default new Router({
+  // mode: "history",
+  // base: process.env.BASE_URL,
   routes: [
     {
       path: '/welcome',
