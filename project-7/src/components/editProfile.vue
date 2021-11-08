@@ -2,37 +2,33 @@
   <div class="window">
     <div class="box">
       <div class="hero">
-        <h1> My account: </h1>   
-        <router-link to="/">
-          <img src="../assets/close-white.png" alt="">
-        </router-link>
+        <h1> Enter your new details: </h1>   
       </div>
       
       <div class="profile">
         <img src="../assets/user.png" alt="">
         <div>
           <p class="title">First name:</p>
-          <!-- <p id="userName"> {{user.firstName}}</p> -->
+          <input type="text">
         </div>
         <div>
           <p class="title">Last name:</p>
-          <!-- <p id="userName"> {{user.lastName}}</p> -->
+          <input type="text">
         </div>
         <div>
           <p class="title">Email:</p>
-          <!-- <p id="userEmail"> {{user.email}}</p> -->
+          <input type="text">
         </div>
         <div>
           <p class="title">Password:</p>
-          <!-- <p> {{user.password}} </p> -->
+          <input type="password">
         </div>
       </div>
       <div class="profile-btns">
-        <input type="button" value="Logout" id="logoutBtn" @click="logoutUser()">
-        <router-link to="/edit">
-          <input type="button" value="Edit my profile">
+        <input type="submit" value="Submit" id="submitChanges">
+        <router-link to="/profile">
+          <input type="button" value="Cancel">
         </router-link>
-        <input type="button" value="Delete account" id="deleteBtn" @click="deleteUser()">
       </div>
     </div>
   </div>
@@ -43,61 +39,10 @@
 import axios from 'axios'; 
 
 export default {
-  name: 'viewProfile',
-  data() {
-    return {
-      user: [],
-    };
-  },
+  name: 'editProfile',
   methods: {
 
-    getUser() {
-      let token = window.localStorage.getItem('token');
-
-      axios.get('http://localhost:3000/api/user/:id',
-				{ headers: {
-					'Authorization': `User ${token}`,
-					}
-				})
-				.then(function (response) {
-					self.user = response.data;
-					console.log("Response", response);
-				})
-				.catch(function (err) {
-					console.log("Error", err);
-				})
-    },
-
-    logoutUser() {
-      localStorage.clear();
-      this.$router.push({ name: "Welcome" });
-    },
-
-    deleteUser() {
-      let self = this;
-      let token = window.localStorage.getItem('token');
-      axios.delete('http://localhost:3000/api/user',
-       { headers: {
-        'Authorization': `Basic ${token}`,
-        }
-      })
-      .then(function (response) {
-        self.$router.push({ name: "Welcome" });
-        self.user = response.data;
-        alert('Successfully deleted account');
-        this.logoutUser();
-        localStorage.clear();
-        self.$router.push({ name: "Welcome" });
-        console.log("Response", response);
-      })
-      .catch(function (err) {
-        console.log("Error", err);
-      })
-		},
-  },
-  beforeMount() {
-    this.getUser()
-  },
+  }
 }
 </script>
 
@@ -165,14 +110,20 @@ export default {
   font-size: 1.2rem;
   font-weight: 200;
 }
+.window .box .profile div input {
+    height: 30px;
+    width: 170px;
+    border: none;
+    border-radius: 10px;
+}
 .window .box .profile-btns input {
   padding: 10px;
   margin-right: 15px;
   border-radius: 12px;
   border: none;
   background-color: white;
-  font-weight: 800;
   color: #091F43;
+  font-weight: 800;
   font-size: 17px;
 }
 
@@ -181,7 +132,7 @@ export default {
   .window .box{
     width: 90%;
   } 
-  .window .box input {
+  .window .box .profile-btns input {
     margin-top: 10px;
   }
 }

@@ -9,6 +9,7 @@ import Signup from '../components/signup.vue'
 import Home from '../components/mainPage.vue'
 import createPost from '../components/createPost.vue'
 import viewProfile from '../components/viewProfile.vue'
+import editProfile from '../components/editProfile.vue'
 import viewComments from '../components/viewComments.vue'
 
 export default new Router({
@@ -42,6 +43,11 @@ export default new Router({
       path: '/profile',
       name: 'viewProfile',
       component: viewProfile
+    },
+    {
+      path: '/edit',
+      name: 'editProfile',
+      component: editProfile
     },
     {
       path: '/comments',

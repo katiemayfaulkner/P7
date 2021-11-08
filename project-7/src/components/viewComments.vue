@@ -3,7 +3,7 @@
         <div class="box">
             <div class="hero">
                 <h1> Comments: </h1>
-                <router-link to="/home">
+                <router-link to="/">
                     <img src="../assets/close-white.png" alt="">
                 </router-link>
             </div>
@@ -49,6 +49,11 @@
 <script>
 export default {
     name: 'viewComments',
+    data() {
+			return {
+				comments: [],
+			};
+		},
 }
 </script>
 

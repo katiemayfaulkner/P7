@@ -24,6 +24,7 @@ const express = require("express");
 const router = express.Router();
 const userCtrl = require("../controllers/user");
 
+// Routes -> /api/user 
 router.post("/signup", userCtrl.signup);
 router.get("/:id", userCtrl.getOne);
 router.put("/:id", userCtrl.modifyUser);

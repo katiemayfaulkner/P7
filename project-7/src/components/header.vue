@@ -5,7 +5,7 @@
                 <a href="index.html">
                     <img class="logo" src="../assets/icon-left-font-monochrome-white.svg" alt="">
                 </a>
-                <h1> Welcome, Katie!</h1>
+                <h1> Welcome, "users first name" !</h1>
             </div>
 
             <div class="header-btns col-lg-2 col-md-3">  
@@ -13,7 +13,7 @@
                 <img src="../assets/post.png" alt="" id="showPost" to="/main">
               </router-link> 
               <router-link to="/profile">
-                <img src="../assets/user.png" alt="" id="showUser">   
+                <img src="../assets/user.png" alt="" id="showUser" >   
                </router-link>
             </div>
         </div>
@@ -22,7 +22,14 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  data() {
+    return {
+      user: {},
+    };
+	},
+  props: ['username'],
+  
 }
 </script>
 

@@ -162,7 +162,9 @@
                 axios.post("http://localhost:3000/api/user/signup", this.form)
                 .then(response => {
                     console.log("Response", response.data);
-                    self.$router.push({ name: "home" });
+                    localStorage.setItem('token', response.data.token);
+					localStorage.setItem('user', JSON.stringify(response.data.user));
+                    self.$router.push({ name: "/" });
                 })
                 .catch(error => {
                     console.error(error);

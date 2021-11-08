@@ -3,7 +3,7 @@
         <div class="box">
           <div class="hero">
               <h1> Create New Post: </h1>
-              <router-link to="/home">
+              <router-link to="/">
                   <img src="../assets/close-white.png" alt="">
               </router-link>
           </div>
@@ -12,7 +12,7 @@
 
 
 
-
+            
               <div class="img-input">
                   <div class="preview">
                     <img class="img-preview" style="{ 'background-image': `url(${previewImage})` }" @click="selectImage">

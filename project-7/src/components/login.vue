@@ -103,7 +103,9 @@ export default {
       axios.post("http://localhost:3000/api/user/login", this.form)
       .then(response => {
           console.log("Response", response.data);
-          self.$router.push({ name: "main" });
+          localStorage.setItem('token', response.data.token);
+					localStorage.setItem('user', JSON.stringify(response.data.user));
+          self.$router.push({ name: "/" });
       })
       .catch(error => {
           console.error(error);
