@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <!-- <Welcome/> -->
+    <!-- <Welcome v-if="loggedIn"/> -->
     <Header/>
     <MainPage/>
-    <router-view/>
+    <router-view/>   
 
   </div>
 </template>
@@ -19,6 +19,7 @@ import MainPage from './components/mainPage.vue'
 
 export default {
   name: 'app',
+  // loggedIn: true,
   components: {
     // Welcome,
     Header,

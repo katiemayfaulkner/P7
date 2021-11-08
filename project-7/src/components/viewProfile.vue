@@ -24,14 +24,47 @@
           </div>
       </div>
           <input type="button" value="Edit my profile" id="editProfile">
-          <input type="button" value="Delete account" id="deleteBtn">
+          <input type="button" value="Logout" id="logoutBtn" @click="logoutUser()">
+          <input type="button" value="Delete account" id="deleteBtn" @click="deleteUser()">
     </div>
   </div>
 </template>
 
 <script>
+// import the promise-based library used with Node.js + your browser to make asynchronous Js HTTP requests
+import axios from 'axios'; 
+
 export default {
-   name: 'viewProfile', 
+  name: 'viewProfile',
+  methods: {
+
+    logoutUser() {
+      localStorage.clear();
+      this.$router.push({ name: "Welcome" });
+    },
+
+    deleteUser() {
+      let self = this;
+      let token = window.localStorage.getItem('token');
+      axios.delete('http://localhost:3000/api/user',
+       { headers: {
+        'Authorization': `Basic ${token}`,
+        }
+      })
+      .then(function (response) {
+        self.$router.push({ name: "Welcome" });
+        self.user = response.data;
+        alert('Successfully deleted account');
+        this.logoutUser();
+        localStorage.clear();
+        self.$router.push({ name: "Welcome" });
+        console.log("Response", response);
+      })
+      .catch(function (err) {
+        console.log("Error", err);
+      })
+		},
+  }
 }
 </script>
 

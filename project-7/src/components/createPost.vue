@@ -9,9 +9,21 @@
           </div>
 
           <div class="create-post">
+
+
+
+
               <div class="img-input">
-                  <input type="file">
+                  <div class="preview">
+                    <img class="img-preview" style="{ 'background-image': `url(${previewImage})` }" @click="selectImage">
+                  </div>
+
+                  <input type="file" id="postImg" accept="image/*" @input="pickFile" ref="fileInput">
               </div>
+
+
+
+
               <div class="text-input">
                   <label for="text"> Insert your caption here: </label>
                   <input type="text" maxlength="150">
@@ -24,7 +36,32 @@
 
 <script>
 export default {
-  name: 'createPost'
+  name: 'createPost',
+
+  data() {
+    return {
+      previewImage: null
+    };
+  },
+
+  methods: {
+
+    selectImage () {
+          this.$refs.fileInput.click()
+      },
+      pickFile () {
+        let input = this.$refs.fileInput
+        let file = input.files
+        if (file && file[0]) {
+          let reader = new FileReader
+          reader.onload = e => {
+            this.previewImage = e.target.result
+          }
+          reader.readAsDataURL(file[0])
+          this.$emit('input', file[0])
+        }
+      }
+  },
 }
 </script>
 
@@ -55,7 +92,7 @@ export default {
 .window .box .hero {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 60px;
+    margin-bottom: 10px;
 }
 .window .box .hero a{
     display: flex;
@@ -75,7 +112,16 @@ export default {
   margin-top: 20px;
 }
 .window .box .create-post .img-input {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
+}
+.window .box .create-post .img-input .preview .img-preview{
+  width: 150px;
+  height: 140px;
+  border: 1px hotpink solid;
+  display: block;
+  margin: 0 auto 10px;
+  background-size: cover;
+  background-position: center center;  
 }
 .window .box .create-post .text-input {
   margin: 5px 0;
@@ -86,7 +132,7 @@ export default {
 }
 .window .box .create-post .text-input input {
   width: 100%;
-  height: 100px;
+  height: 40px;
   overflow: scroll;
   border: 2px solid black;
 }

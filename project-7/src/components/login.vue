@@ -6,13 +6,14 @@
         <p> or <router-link to="/signup"> signup </router-link> and create an account.</p>
         </div>
 
-        <div class="auth">
+        <form class="auth" @submit.prevent="sendForm">
             <input
                 type="text"
                 name="first-name"
                 placeholder="First name"
                 class="authInput loginInput"
                 required="true"
+                v-model="form.firstName"
             />
             <input
                 type="text"
@@ -20,6 +21,7 @@
                 placeholder="Last name"
                 class="authInput loginInput"
                 required="true"
+                v-model="form.lastName"
             />
             <input
                 type="text"
@@ -27,6 +29,7 @@
                 placeholder="Email"
                 class="authInput loginInput"
                 required="true"
+                v-model="form.email"
             />
             <div>
                 <input
@@ -36,6 +39,7 @@
                 class="authInput loginInput"
                 required="true"
                 id="loginPassword"
+                v-model="form.password"
                 />
                 <img
                 @click="showLogin"
@@ -52,19 +56,30 @@
                 />
             </div>
           
-            <button id="login" class="authBtn" disabled="disabled"> Log In </button>
-        </div>
+            <button id="login" class="authBtn"> Log In </button>
+        </form>
     </div>
   </div>
 </template>
 
 <script>
+// import the promise-based library used with Node.js + your browser to make asynchronous Js HTTP requests
+import axios from 'axios'; 
+
 export default {
   name: 'Login',
-
+  data() {
+    return {
+      form: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+      },
+      hidden: 1,
+    };
+  },
   methods: {
-  // fetch("http://localhost:3000/api/user/login")
-
     // Password visibility toggle
     showLogin: function () {
       let loginPassword = document.getElementById("loginPassword");
@@ -81,6 +96,18 @@ export default {
         showLogin.style.visibility = "hidden"
         hideLogin.style.visibility = "visible"
       }
+    },
+
+    sendForm() {
+      let self = this;
+      axios.post("http://localhost:3000/api/user/login", this.form)
+      .then(response => {
+          console.log("Response", response.data);
+          self.$router.push({ name: "main" });
+      })
+      .catch(error => {
+          console.error(error);
+      })
     },
   }
 }

@@ -7,7 +7,13 @@ const User = require('../models/user');
 
 // SIGNUP
 exports.signup = (req, res, next) => {
-  User.findOne({ email: req.body.email }).then( //check if entered email corresponds to an existing user in database
+  console.log("DELETE");
+  /**
+   * In MySQL, use either:
+   * - PLAIN/VANILLA: MySQL Queries (SQL)
+   * - ORM -> 
+   */
+  User.findOne({ where: { email: req.body.email } }).then( //check if entered email corresponds to an existing user in database
   (user) => {
       if (user) { //if not, return error, if corresponds, continue
         return res.status(401).json({
@@ -83,21 +89,9 @@ exports.login = (req, res, next) => {
             token: token
           });
         }
-      ).catch(
-        (error) => {
-          res.status(500).json({
-            error: error
-          });
-        }
-      );
+      ).catch(err => res.render('error', {error:err.message}))
     }
-  ).catch(
-    (error) => {
-      res.status(500).json({
-        error: error
-      });
-    }
-  );
+  ).catch(err => res.render('error', {error:err.message}))
 }
 
 // GET USER
@@ -107,13 +101,7 @@ exports.getUser = (req, res, next) => {
         (user) => {
             res.status(200).json(user)
         }
-    ).catch(
-        (error) => {
-            res.status(400).json({
-                error: error
-            });
-        }
-    );
+    ).catch(err => res.render('error', {error:err.message}))
 }
 
 // DELETE USER
@@ -129,11 +117,5 @@ exports.deleteUser = (req, res, next) => {
             );
             res.sendStatus(200);
         }
-    ).catch(
-        (error) => {
-            res.status(400).json({
-                error: error
-            });
-        }
-    );
+    ).catch(err => res.render('error', {error:err.message}))
 }
